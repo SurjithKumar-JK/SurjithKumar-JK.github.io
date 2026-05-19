@@ -6,7 +6,7 @@
     <title>Surjith Kumar JK | AI Engineering & Cybersecurity</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Surjith Kumar JK - AI/ML Engineer, Cybersecurity Specialist, GIS Architect. 8+ production projects.">
+    <meta name="description" content="Surjith Kumar JK - AI/ML Engineer, Cybersecurity Specialist, GIS Architect. 8+ production projects, 3+ years experience.">
     <meta name="keywords" content="AI Engineer, Cybersecurity, GIS, Computer Vision, Machine Learning, Python, TensorFlow">
     <meta name="author" content="Surjith Kumar JK">
     <meta name="robots" content="index, follow">
@@ -27,6 +27,10 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -125,10 +129,10 @@
         .logo-text .first-name { color: #EAEAEF; }
         .logo-text .last-name { color: #94A3B8; font-weight: 500; }
 
-        /* Navigation Links - Desktop */
+        /* Navigation Links */
         .nav-links {
             display: flex;
-            gap: clamp(20px, 3vw, 32px);
+            gap: clamp(16px, 2.5vw, 28px);
         }
 
         .nav-links a {
@@ -139,7 +143,7 @@
             transition: color 0.2s;
         }
 
-        .nav-links a:hover { color: #60A5FA; }
+        .nav-links a:hover, .nav-links a.active { color: #60A5FA; }
 
         /* Mobile Menu Button */
         .mobile-menu-btn {
@@ -161,23 +165,35 @@
             border: 1px solid rgba(16, 185, 129, 0.2);
         }
 
-        /* Main Content */
-        .main {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            padding: clamp(40px, 8vh, 80px) 0;
+        /* Sections */
+        section {
+            padding: clamp(60px, 10vh, 100px) 0;
+            scroll-margin-top: 80px;
         }
 
-        /* Two Column Layout - Responsive */
-        .two-columns {
+        .section-title {
+            font-size: clamp(28px, 5vw, 40px);
+            font-weight: 700;
+            font-family: 'Syne', sans-serif;
+            margin-bottom: clamp(30px, 5vh, 50px);
+            text-align: center;
+        }
+
+        .section-title span {
+            background: linear-gradient(135deg, #60A5FA, #A78BFA, #34D399);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Home Section */
+        .home-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: clamp(30px, 5vw, 60px);
             align-items: center;
         }
 
-        /* Left Column */
         .availability {
             display: inline-flex;
             align-items: center;
@@ -229,10 +245,8 @@
             font-size: clamp(13px, 1.8vw, 15px);
             line-height: 1.5;
             margin-bottom: clamp(20px, 3vh, 28px);
-            max-width: 100%;
         }
 
-        /* Stats Row - Responsive */
         .stats {
             display: flex;
             gap: clamp(20px, 5vw, 40px);
@@ -258,7 +272,6 @@
             margin-top: 4px;
         }
 
-        /* Buttons - Responsive */
         .buttons {
             display: flex;
             gap: clamp(12px, 2vw, 16px);
@@ -297,7 +310,6 @@
             background: rgba(59, 130, 246, 0.05);
         }
 
-        /* Trust Items */
         .trust {
             display: flex;
             gap: clamp(16px, 3vw, 24px);
@@ -312,7 +324,7 @@
             color: #6B7280;
         }
 
-        /* Profile Card - Fully Responsive */
+        /* Profile Card */
         .profile-card {
             background: rgba(20, 24, 35, 0.5);
             backdrop-filter: blur(12px);
@@ -320,7 +332,6 @@
             border-radius: clamp(20px, 3vw, 28px);
             padding: clamp(20px, 3vw, 28px);
             position: relative;
-            max-width: 100%;
         }
 
         .profile-img {
@@ -329,7 +340,6 @@
             border-radius: clamp(16px, 2vw, 20px);
             overflow: hidden;
             margin: 0 auto 16px;
-            background: linear-gradient(135deg, #1E293B, #0F172A);
             aspect-ratio: 1 / 1;
         }
 
@@ -370,7 +380,6 @@
             color: #94A3B8;
         }
 
-        /* Floating Icons - Responsive */
         .floating-icon {
             position: absolute;
             width: clamp(28px, 5vw, 36px);
@@ -384,16 +393,114 @@
             backdrop-filter: blur(8px);
         }
 
-        .floating-1 { top: clamp(-8px, -1vw, -12px); right: clamp(-8px, -1vw, -12px); }
-        .floating-2 { bottom: clamp(-8px, -1vw, -12px); left: clamp(-8px, -1vw, -12px); background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.3); }
+        .floating-1 { top: -12px; right: -12px; }
+        .floating-2 { bottom: -12px; left: -12px; background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.3); }
 
-        /* Domain Section - Responsive Grid */
-        .domain-section {
-            padding: clamp(20px, 4vh, 32px) 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            background: rgba(10, 10, 15, 0.4);
+        /* Profile Details Section */
+        .profile-details {
+            background: rgba(20, 24, 35, 0.3);
+            border-radius: clamp(20px, 3vw, 24px);
+            padding: clamp(24px, 4vw, 40px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
+        .profile-details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: clamp(20px, 3vw, 30px);
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .detail-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .detail-content h4 {
+            font-size: clamp(14px, 2vw, 16px);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .detail-content p {
+            font-size: clamp(12px, 1.5vw, 14px);
+            color: #9CA3AF;
+            line-height: 1.4;
+        }
+
+        /* Project Cards */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: clamp(20px, 3vw, 30px);
+        }
+
+        .project-card {
+            background: rgba(20, 24, 35, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: clamp(16px, 2vw, 20px);
+            padding: clamp(20px, 3vw, 24px);
+            transition: all 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        .project-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        .project-card h3 {
+            font-size: clamp(16px, 2vw, 18px);
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .project-card p {
+            font-size: clamp(12px, 1.5vw, 13px);
+            color: #9CA3AF;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .project-tech span {
+            font-size: 10px;
+            padding: 4px 10px;
+            background: rgba(30, 41, 59, 0.5);
+            border-radius: 20px;
+            color: #94A3B8;
+        }
+
+        /* Domain Cards */
         .domain-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -434,6 +541,55 @@
         .domain-info h4 { font-size: clamp(13px, 1.8vw, 15px); font-weight: 600; margin-bottom: 4px; }
         .domain-info p { font-size: clamp(10px, 1.2vw, 11px); color: #6B7280; }
 
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: clamp(20px, 3vw, 30px);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: rgba(20, 24, 35, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: clamp(16px, 2vw, 20px);
+            padding: clamp(24px, 4vw, 32px);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin: 0 auto 16px;
+        }
+
+        .contact-card h3 {
+            font-size: clamp(16px, 2vw, 18px);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .contact-card p, .contact-card a {
+            font-size: clamp(12px, 1.5vw, 14px);
+            color: #9CA3AF;
+            text-decoration: none;
+        }
+
+        .contact-card a:hover { color: #60A5FA; }
+
         /* Footer */
         .footer {
             padding: clamp(16px, 3vh, 24px) 0;
@@ -471,17 +627,8 @@
             .nav-links { display: flex !important; }
         }
 
-        /* Large Desktop Optimization */
-        @media (min-width: 1600px) {
-            .container { max-width: 1400px; }
-            h1 { font-size: 64px; }
-            .description { font-size: 17px; }
-        }
-
-        /* Small Mobile Optimization */
         @media (max-width: 480px) {
-            .two-columns { gap: 32px; }
-            .stats { gap: 24px; }
+            .buttons { flex-direction: column; }
             .btn-primary, .btn-outline { width: 100%; justify-content: center; }
         }
     </style>
@@ -494,7 +641,7 @@
 <div class="app">
     <!-- Navigation -->
     <div class="nav">
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 0 clamp(16px, 5vw, 32px);">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
             <div class="logo-area">
                 <div class="logo-box"><span>SK</span></div>
                 <div class="logo-text">
@@ -503,11 +650,12 @@
                 </div>
             </div>
             <div class="nav-links" id="navLinks">
-                <a href="#">Home</a>
-                <a href="#">Case Studies</a>
-                <a href="#">Projects</a>
-                <a href="#">Expertise</a>
-                <a href="#">Contact</a>
+                <a href="#home" class="active">Home</a>
+                <a href="#profile">Profile</a>
+                <a href="#projects">Projects</a>
+                <a href="#case-studies">Case Studies</a>
+                <a href="#expertise">Expertise</a>
+                <a href="#contact">Contact</a>
             </div>
             <div style="display: flex; align-items: center; gap: 16px;">
                 <div class="isc2-badge">ISC² Candidate</div>
@@ -516,127 +664,177 @@
         </div>
     </div>
 
-    <!-- Main Content -->
-    <div class="main">
+    <!-- Home Section -->
+    <section id="home">
         <div class="container">
-            <div class="two-columns">
-                <!-- Left Column -->
+            <div class="home-grid">
                 <div>
                     <div class="availability">
                         <div class="live-dot"></div>
                         <span class="availability-text">✦ AVAILABLE FOR GLOBAL MANDATES ✦</span>
                     </div>
-                    
-                    <h1>
-                        Engineering <span class="gradient-text">AI</span><br>
-                        That Scales & <span class="gradient-text">Protects</span>
-                    </h1>
-                    
-                    <p class="description">
-                        Senior AI/ML Engineer with 3+ years of enterprise experience. 
-                        Specializing in Computer Vision, GIS infrastructure, and Cybersecurity. 
-                        <strong>8 production projects delivered.</strong>
-                    </p>
-                    
+                    <h1>Engineering <span class="gradient-text">AI</span><br>That Scales & <span class="gradient-text">Protects</span></h1>
+                    <p class="description">Senior AI/ML Engineer with 3+ years of enterprise experience. Specializing in Computer Vision, GIS infrastructure, and Cybersecurity. <strong>8 production projects delivered.</strong></p>
                     <div class="stats">
-                        <div>
-                            <div class="stat-value">8+</div>
-                            <div class="stat-label">PRODUCTION PROJECTS</div>
-                        </div>
-                        <div>
-                            <div class="stat-value">3+</div>
-                            <div class="stat-label">YEARS INDUSTRY</div>
-                        </div>
-                        <div>
-                            <div class="stat-value">4</div>
-                            <div class="stat-label">TECH DOMAINS</div>
-                        </div>
+                        <div><div class="stat-value">8+</div><div class="stat-label">PRODUCTION PROJECTS</div></div>
+                        <div><div class="stat-value">3+</div><div class="stat-label">YEARS INDUSTRY</div></div>
+                        <div><div class="stat-value">4</div><div class="stat-label">TECH DOMAINS</div></div>
                     </div>
-                    
                     <div class="buttons">
-                        <a href="#" class="btn-primary"><i class="fas fa-folder-open"></i> View Case Studies</a>
-                        <a href="#" class="btn-outline"><i class="fas fa-paper-plane"></i> Contact Direct</a>
+                        <a href="#projects" class="btn-primary"><i class="fas fa-folder-open"></i> View Projects</a>
+                        <a href="#contact" class="btn-outline"><i class="fas fa-paper-plane"></i> Contact Direct</a>
                     </div>
-                    
                     <div class="trust">
                         <div class="trust-item"><i class="fas fa-check-circle" style="color: #10B981;"></i> NDA-Compliant</div>
                         <div class="trust-item"><i class="fas fa-shield-alt" style="color: #60A5FA;"></i> ISC² Candidate</div>
                         <div class="trust-item"><i class="fas fa-globe" style="color: #34D399;"></i> Global Remote</div>
                     </div>
                 </div>
-                
-                <!-- Right Column - Profile Card -->
                 <div>
                     <div class="profile-card">
                         <div class="floating-icon floating-1"><i class="fas fa-brain" style="color: #60A5FA; font-size: 14px;"></i></div>
                         <div class="floating-icon floating-2"><i class="fas fa-shield-haltered" style="color: #34D399; font-size: 14px;"></i></div>
-                        
-                        <div class="profile-img">
-                            <img src="SurjithKumar-JK.jpg" alt="Surjith Kumar JK">
-                        </div>
-                        
+                        <div class="profile-img"><img src="SurjithKumar-JK.jpg" alt="Surjith Kumar JK"></div>
                         <div class="profile-name">Surjith Kumar JK</div>
                         <div class="profile-title">AI/ML & Computer Vision Engineer</div>
-                        
                         <div class="tech-stack">
-                            <span class="tech-item">Python</span>
-                            <span class="tech-item">TensorFlow</span>
-                            <span class="tech-item">OpenCV</span>
-                            <span class="tech-item">PyTorch</span>
-                            <span class="tech-item">QGIS</span>
-                            <span class="tech-item">PostGIS</span>
+                            <span class="tech-item">Python</span><span class="tech-item">TensorFlow</span><span class="tech-item">OpenCV</span>
+                            <span class="tech-item">PyTorch</span><span class="tech-item">QGIS</span><span class="tech-item">PostGIS</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Domain Cards -->
-    <div class="domain-section">
+    <!-- Profile Section -->
+    <section id="profile">
         <div class="container">
-            <div class="domain-grid">
-                <div class="domain-card">
-                    <div class="domain-icon ai"><i class="fas fa-brain"></i></div>
-                    <div class="domain-info">
-                        <h4>AI & Computer Vision</h4>
-                        <p>94.2% mAP | 23ms inference | YOLOv8, TensorFlow</p>
+            <h2 class="section-title">Professional <span>Profile</span></h2>
+            <div class="profile-details">
+                <div class="profile-details-grid">
+                    <div class="detail-item">
+                        <div class="detail-icon"><i class="fas fa-user-astronaut"></i></div>
+                        <div class="detail-content">
+                            <h4>Background</h4>
+                            <p>Strategic technical innovator with proven track record in AI, GIS, Computer Vision and Cybersecurity. 3+ years delivering enterprise solutions.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="domain-card">
-                    <div class="domain-icon cyber"><i class="fas fa-shield-virus"></i></div>
-                    <div class="domain-info">
-                        <h4>Cybersecurity</h4>
-                        <p>99.1% detection | &lt;1% FPR | Threat Intelligence</p>
+                    <div class="detail-item">
+                        <div class="detail-icon"><i class="fas fa-bullseye"></i></div>
+                        <div class="detail-content">
+                            <h4>Mission</h4>
+                            <p>Design high-impact, performance-focused solutions bridging technical precision with business goals—creating innovation that scales and endures.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="domain-card">
-                    <div class="domain-icon gis"><i class="fas fa-map-marked-alt"></i></div>
-                    <div class="domain-info">
-                        <h4>GIS & GPS</h4>
-                        <p>23% time saved | 87% accuracy | PostGIS, QGIS</p>
+                    <div class="detail-item">
+                        <div class="detail-icon"><i class="fas fa-trophy"></i></div>
+                        <div class="detail-content">
+                            <h4>Key Strengths</h4>
+                            <p>Mission-critical initiatives | High-stakes client resolution | Research-driven approach | End-to-end project delivery</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon"><i class="fas fa-globe"></i></div>
+                        <div class="detail-content">
+                            <h4>Availability</h4>
+                            <p>Global Remote | India Based | Open for International Collaborations | Flexible Time Zones</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured <span>Projects</span></h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-eye"></i></div>
+                    <h3>AI Code Reviewer</h3>
+                    <p>LLM-powered code analysis tool for security vulnerability detection and code quality improvement.</p>
+                    <div class="project-tech"><span>LangChain</span><span>OpenAI</span><span>Streamlit</span></div>
+                    <a href="#" style="color: #60A5FA; font-size: 13px; text-decoration: none;">GitHub →</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <h3>GPS Track Visualizer</h3>
+                    <p>Interactive web application for uploading, visualizing, and analyzing GPS track data with maps.</p>
+                    <div class="project-tech"><span>Streamlit</span><span>Folium</span><span>Pandas</span></div>
+                    <a href="#" style="color: #60A5FA; font-size: 13px; text-decoration: none;">Live Demo →</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-shield-virus"></i></div>
+                    <h3>Threat Intelligence Feed</h3>
+                    <p>Real-time aggregator of open-source threat intelligence feeds for security monitoring.</p>
+                    <div class="project-tech"><span>Python</span><span>Redis</span><span>APIs</span></div>
+                    <a href="#" style="color: #60A5FA; font-size: 13px; text-decoration: none;">GitHub →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section id="case-studies">
+        <div class="container">
+            <h2 class="section-title">Client <span>Case Studies</span></h2>
+            <div class="projects-grid">
+                <div class="project-card"><div class="project-icon"><i class="fas fa-eye"></i></div><h3>Real-Time Object Detection</h3><p>94.2% mAP | 23ms inference | YOLOv8, TensorRT</p><div class="project-tech"><span>Computer Vision</span><span>Production</span></div></div>
+                <div class="project-card"><div class="project-icon"><i class="fas fa-shield-virus"></i></div><h3>Network Intrusion Detection</h3><p>99.1% detection | &lt;1% FPR | TensorFlow, Kafka</p><div class="project-tech"><span>Cybersecurity</span><span>Real-time</span></div></div>
+                <div class="project-card"><div class="project-icon"><i class="fas fa-truck"></i></div><h3>GPS Fleet Optimizer</h3><p>23% time saved | 15% fuel savings | PostGIS, OR-Tools</p><div class="project-tech"><span>GIS</span><span>Optimization</span></div></div>
+                <div class="project-card"><div class="project-icon"><i class="fas fa-satellite"></i></div><h3>Satellite Image Analysis</h3><p>87% classification | PyTorch, GDAL, QGIS</p><div class="project-tech"><span>GIS+CV</span><span>Remote Sensing</span></div></div>
+                <div class="project-card"><div class="project-icon"><i class="fas fa-user-secret"></i></div><h3>Facial Recognition System</h3><p>&lt;0.1% false accept | FaceNet, OpenCV</p><div class="project-tech"><span>CV+Security</span><span>Access Control</span></div></div>
+                <div class="project-card"><div class="project-icon"><i class="fas fa-water"></i></div><h3>Flood Risk Mapping</h3><p>Real-time prediction | XGBoost, PostGIS</p><div class="project-tech"><span>GIS+AI</span><span>Early Warning</span></div></div>
+                <div class="project-card"><div class="project-icon"><i class="fas fa-drone"></i></div><h3>Drone Path Planning</h3><p>98% success rate | A* algorithm, OpenCV, ROS</p><div class="project-tech"><span>ADAS+CV</span><span>Autonomous</span></div></div>
+            </div>
+            <p style="text-align: center; margin-top: 30px; font-size: 12px; color: #6B7280;">* Due to NDA, full case study details available upon request</p>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise">
+        <div class="container">
+            <h2 class="section-title">Technical <span>Expertise</span></h2>
+            <div class="domain-grid">
+                <div class="domain-card"><div class="domain-icon ai"><i class="fas fa-brain"></i></div><div class="domain-info"><h4>AI & Computer Vision</h4><p>94.2% mAP | 23ms inference | YOLOv8, TensorFlow</p></div></div>
+                <div class="domain-card"><div class="domain-icon cyber"><i class="fas fa-shield-virus"></i></div><div class="domain-info"><h4>Cybersecurity</h4><p>99.1% detection | &lt;1% FPR | Threat Intelligence</p></div></div>
+                <div class="domain-card"><div class="domain-icon gis"><i class="fas fa-map-marked-alt"></i></div><div class="domain-info"><h4>GIS & GPS</h4><p>23% time saved | 87% accuracy | PostGIS, QGIS</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In <span>Touch</span></h2>
+            <div class="contact-grid">
+                <div class="contact-card"><div class="contact-icon"><i class="fas fa-envelope"></i></div><h3>Email</h3><a href="mailto:surjith.kumar.jk@gmail.com">surjith.kumar.jk@gmail.com</a></div>
+                <div class="contact-card"><div class="contact-icon"><i class="fab fa-linkedin"></i></div><h3>LinkedIn</h3><a href="#">linkedin.com/in/surjithkumarjk</a></div>
+                <div class="contact-card"><div class="contact-icon"><i class="fab fa-github"></i></div><h3>GitHub</h3><a href="#">github.com/surjithkumarjk</a></div>
+                <div class="contact-card"><div class="contact-icon"><i class="fas fa-id-card"></i></div><h3>ORCID</h3><a href="#">orcid.org/0000-0001-XXXX-XXXX</a></div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <div class="footer">
-        <div class="container">
-            <div class="footer-text">
-                © 2026 Surjith Kumar JK — AI + Cybersecurity + GIS Infrastructure
-            </div>
-        </div>
+        <div class="container"><div class="footer-text">© 2026 Surjith Kumar JK — AI + Cybersecurity + GIS Infrastructure</div></div>
     </div>
 </div>
 
 <script>
     function toggleMenu() {
-        const navLinks = document.getElementById('navLinks');
-        navLinks.classList.toggle('active');
+        document.getElementById('navLinks').classList.toggle('active');
     }
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', function() {
+            document.getElementById('navLinks').classList.remove('active');
+            document.querySelectorAll('.nav-links a').forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
 </script>
-
 </body>
 </html>
