@@ -3,21 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Surjith Kumar JK | AI Engineering & Cybersecurity Intelligence</title>
+    <title>Surjith Kumar JK | AI Engineering & Cybersecurity</title>
     
-    <!-- SEO & Brand Meta -->
-    <meta name="description" content="Surjith Kumar JK - AI/ML Engineer, Cybersecurity Specialist, GIS Architect. 8+ production projects, 3+ years industry experience.">
-    <meta name="keywords" content="AI Engineer, Cybersecurity, GIS, Computer Vision, Machine Learning, Python">
+    <meta name="description" content="Surjith Kumar JK - AI/ML Engineer, Cybersecurity Specialist, GIS Architect. 8+ production projects.">
+    <meta name="keywords" content="AI Engineer, Cybersecurity, GIS, Computer Vision, Machine Learning">
     <meta name="author" content="Surjith Kumar JK">
-    <meta name="robots" content="index, follow">
     
-    <!-- Open Graph -->
-    <meta property="og:title" content="Surjith Kumar JK | AI Engineering & Cybersecurity Intelligence">
+    <meta property="og:title" content="Surjith Kumar JK | AI Engineering & Cybersecurity">
     <meta property="og:description" content="Senior AI/ML Engineer specializing in Computer Vision, GIS, and Cybersecurity.">
     <meta property="og:image" content="SurjithKumar-JK.jpg">
     <meta property="og:type" content="profile">
     
-    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
@@ -32,56 +28,22 @@
             font-family: 'Inter', sans-serif;
             background: #0A0A0F;
             color: #EAEAEF;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-            font-size: clamp(14px, 1vw, 16px);
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
         }
 
-        /* Fluid Typography */
-        h1, h2, h3, .brand-font {
-            font-family: 'Syne', sans-serif;
-        }
-
-        /* Responsive Container - Perfect Fit for Any Resolution */
-        .section-container {
+        /* Master Container - Exactly Viewport Height */
+        .master-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
             width: 100%;
-            max-width: min(90%, 1280px);
-            margin: 0 auto;
-            padding: 0 clamp(16px, 4vw, 32px);
             position: relative;
             z-index: 2;
         }
 
-        /* Section Spacing - Scales with Viewport */
-        section {
-            padding: clamp(50px, 8vh, 100px) 0;
-        }
-
-        /* Responsive Grid System */
-        .grid-responsive {
-            display: grid;
-            gap: clamp(16px, 2vw, 24px);
-        }
-
-        .grid-2 {
-            grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
-        }
-
-        .grid-3 {
-            grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
-        }
-
-        .grid-4 {
-            grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
-        }
-
-        @media (min-width: 1024px) {
-            .lg-grid-2 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        /* Animated Background - Fixed Scale */
+        /* Background Effects */
         .animated-bg {
             position: fixed;
             top: 0;
@@ -89,7 +51,8 @@
             width: 100%;
             height: 100%;
             background: radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.06) 0%, transparent 50%);
+                        radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.06) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 80%, rgba(16, 185, 129, 0.04) 0%, transparent 50%);
             z-index: 0;
             pointer-events: none;
         }
@@ -102,93 +65,252 @@
             height: 100%;
             background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
                               linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-            background-size: clamp(30px, 4vw, 60px) clamp(30px, 4vw, 60px);
+            background-size: 50px 50px;
             z-index: 0;
             pointer-events: none;
         }
 
-        /* Glass Components - Responsive */
+        /* Navigation - Compact */
         .glass-nav {
             background: rgba(10, 10, 15, 0.85);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            padding: clamp(12px, 2vh, 20px) 0;
+            padding: 12px 0;
+            flex-shrink: 0;
         }
 
-        .glass-card {
-            background: rgba(20, 24, 35, 0.5);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            border-radius: clamp(12px, 2vw, 20px);
-            padding: clamp(16px, 3vw, 24px);
+        .section-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
         }
 
-        .glass-card:hover {
-            border-color: rgba(59, 130, 246, 0.3);
-            transform: translateY(-4px);
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        /* Gradient Text - Fluid */
-        .gradient-primary {
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #3B82F6, #10B981);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon span {
+            font-weight: bold;
+            font-size: 14px;
+            color: white;
+        }
+
+        .logo-text {
+            font-weight: 700;
+            font-size: 18px;
+            font-family: 'Syne', sans-serif;
+        }
+
+        .gradient-text {
             background: linear-gradient(135deg, #60A5FA 0%, #A78BFA 50%, #34D399 100%);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
 
-        /* Responsive Buttons */
-        .btn-primary, .btn-outline {
-            padding: clamp(10px, 1.5vh, 14px) clamp(20px, 4vw, 32px);
-            border-radius: clamp(10px, 1.5vw, 14px);
-            font-size: clamp(12px, 1vw, 14px);
-            font-weight: 600;
-            transition: all 0.3s ease;
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: #9CA3AF;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #60A5FA;
+        }
+
+        .nav-badge {
+            font-size: 10px;
+            font-family: monospace;
+            color: #34D399;
+            background: rgba(16, 185, 129, 0.1);
+            padding: 4px 12px;
+            border-radius: 20px;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        /* Main Content - Exactly Fits Remaining Space */
+        .main-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            min-height: 0;
+        }
+
+        /* Hero Layout - Compact Grid */
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 0.7fr;
+            gap: 40px;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* Profile Image - Properly Sized */
+        .profile-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-card {
+            background: rgba(20, 24, 35, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 24px;
+            padding: 20px;
+            position: relative;
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 16px;
+            overflow: hidden;
+            margin: 0 auto 16px;
+            background: linear-gradient(135deg, #1E293B, #0F172A);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-name {
+            text-align: center;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .profile-title {
+            text-align: center;
+            font-size: 12px;
+            color: #60A5FA;
+            margin-bottom: 12px;
+        }
+
+        .tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            justify-content: center;
+        }
+
+        .tech-badge {
+            font-size: 9px;
+            font-family: monospace;
+            padding: 4px 8px;
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 6px;
+            color: #94A3B8;
+        }
+
+        /* Floating Decorations */
+        .float-icon {
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            background: rgba(59, 130, 246, 0.15);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(8px);
+        }
+
+        .float-1 { top: -12px; right: -12px; }
+        .float-2 { bottom: -12px; left: -12px; background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.3); }
+
+        /* Left Content Typography */
+        .status-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        .btn-primary {
-            background: linear-gradient(105deg, #1E293B 0%, #0F172A 100%);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-        }
-
-        .btn-primary:hover {
-            border-color: #3B82F6;
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .btn-outline:hover {
-            border-color: rgba(59, 130, 246, 0.5);
-            background: rgba(59, 130, 246, 0.05);
-        }
-
-        /* Section Tag */
-        .section-tag {
-            display: inline-block;
-            padding: 4px clamp(10px, 2vw, 14px);
-            background: rgba(59, 130, 246, 0.08);
+            padding: 4px 12px;
+            background: rgba(59, 130, 246, 0.1);
             border: 1px solid rgba(59, 130, 246, 0.2);
             border-radius: 40px;
-            font-size: clamp(10px, 0.8vw, 12px);
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: #60A5FA;
             margin-bottom: 16px;
         }
 
-        /* Stats Numbers */
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            background: #10B981;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        .status-text {
+            font-size: 10px;
+            font-family: monospace;
+            color: #60A5FA;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 800;
+            font-family: 'Syne', sans-serif;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .bio-text {
+            color: #9CA3AF;
+            font-size: 13px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            max-width: 90%;
+        }
+
+        /* Stats Row */
+        .stats-row {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 24px;
+        }
+
+        .stat-item {
+            text-align: left;
+        }
+
         .stat-number {
-            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-size: 24px;
             font-weight: 700;
             font-family: 'Syne', sans-serif;
             background: linear-gradient(135deg, #fff 0%, #A78BFA 100%);
@@ -197,68 +319,167 @@
             color: transparent;
         }
 
-        /* Profile Image Container */
-        .profile-image {
-            width: clamp(200px, 30vw, 280px);
-            height: clamp(200px, 30vw, 280px);
-            border-radius: clamp(16px, 2vw, 20px);
-            overflow: hidden;
+        .stat-label {
+            font-size: 9px;
+            font-family: monospace;
+            color: #6B7280;
+            letter-spacing: 0.5px;
         }
 
-        /* Headings */
-        h1 {
-            font-size: clamp(2rem, 6vw, 4rem);
-            line-height: 1.1;
+        /* Buttons */
+        .btn-group {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
         }
 
-        h2 {
-            font-size: clamp(1.5rem, 4.5vw, 2.5rem);
-            line-height: 1.2;
-        }
-
-        h3 {
-            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-        }
-
-        /* Text Sizes */
-        .text-body {
-            font-size: clamp(0.875rem, 1.8vw, 1rem);
-            line-height: 1.5;
-        }
-
-        /* Hero Layout - Responsive */
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: clamp(32px, 6vh, 64px);
+        .btn-primary {
+            padding: 10px 24px;
+            background: linear-gradient(105deg, #1E293B 0%, #0F172A 100%);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 40px;
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
             align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
         }
 
-        @media (min-width: 1024px) {
-            .hero-grid {
-                grid-template-columns: 1fr 0.8fr;
-            }
+        .btn-primary:hover {
+            border-color: #3B82F6;
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            padding: 10px 24px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 40px;
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            border-color: rgba(59, 130, 246, 0.5);
+            background: rgba(59, 130, 246, 0.05);
+        }
+
+        /* Trust Badges */
+        .trust-badges {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 10px;
+            color: #6B7280;
+        }
+
+        /* Domain Grid - Bottom Section */
+        .domains-section {
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            flex-shrink: 0;
+        }
+
+        .domains-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .domain-card {
+            background: rgba(20, 24, 35, 0.4);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 12px;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s;
+        }
+
+        .domain-card:hover {
+            border-color: rgba(59, 130, 246, 0.2);
+            background: rgba(59, 130, 246, 0.05);
+        }
+
+        .domain-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .domain-icon.ai { background: rgba(59, 130, 246, 0.15); color: #60A5FA; }
+        .domain-icon.security { background: rgba(16, 185, 129, 0.15); color: #34D399; }
+        .domain-icon.gis { background: rgba(139, 92, 246, 0.15); color: #A78BFA; }
+
+        .domain-info h4 {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .domain-info p {
+            font-size: 9px;
+            color: #6B7280;
         }
 
         /* Footer */
-        footer {
+        .footer {
+            flex-shrink: 0;
+            padding: 10px 0;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding: clamp(24px, 4vh, 40px) 0;
-            margin-top: clamp(40px, 6vh, 60px);
+            text-align: center;
         }
 
-        /* Hide scrollbar but keep functionality */
-        ::-webkit-scrollbar {
-            width: 6px;
+        .footer-text {
+            font-size: 9px;
+            color: #4B5563;
+            font-family: monospace;
         }
 
-        ::-webkit-scrollbar-track {
-            background: #1a1a2e;
+        /* Responsive Adjustments */
+        @media (max-width: 1024px) {
+            .hero-grid { gap: 30px; }
+            h1 { font-size: 34px; }
+            .profile-image { width: 150px; height: 150px; }
         }
 
-        ::-webkit-scrollbar-thumb {
-            background: #3B82F6;
-            border-radius: 3px;
+        @media (max-width: 900px) {
+            .hero-grid { grid-template-columns: 1fr; gap: 24px; }
+            .profile-wrapper { order: -1; }
+            .profile-card { max-width: 280px; margin: 0 auto; }
+            .bio-text { max-width: 100%; }
+            .domains-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .main-content { overflow-y: auto; }
+            body { overflow-y: auto; height: auto; min-height: 100vh; }
+            .master-container { height: auto; min-height: 100vh; }
+        }
+
+        @media (min-width: 1600px) {
+            .section-container { max-width: 1400px; }
+            h1 { font-size: 52px; }
+            .profile-image { width: 200px; height: 200px; }
         }
     </style>
 </head>
@@ -267,297 +488,153 @@
     <div class="animated-bg"></div>
     <div class="grid-pattern"></div>
 
-    <!-- Navigation -->
-    <nav class="glass-nav fixed top-0 left-0 w-full z-50">
-        <div class="section-container">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center gap-2 md:gap-3">
-                    <div class="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-emerald-500 flex items-center justify-center">
-                        <span class="text-white font-bold text-xs md:text-sm">SK</span>
+    <div class="master-container">
+        <!-- Navigation -->
+        <nav class="glass-nav">
+            <div class="section-container">
+                <div class="nav-content">
+                    <div class="logo">
+                        <div class="logo-icon"><span>SK</span></div>
+                        <span class="logo-text">Surjith<span class="gradient-text">.AI</span></span>
                     </div>
-                    <span class="font-bold text-base md:text-lg tracking-tight">Surjith<span class="gradient-primary">.AI</span></span>
-                </div>
-                
-                <div class="hidden md:flex gap-6 lg:gap-8 text-sm font-medium">
-                    <a href="#home" class="text-gray-300 hover:text-indigo-400 transition">Home</a>
-                    <a href="#case-studies" class="text-gray-300 hover:text-indigo-400 transition">Case Studies</a>
-                    <a href="#side-projects" class="text-gray-300 hover:text-indigo-400 transition">Projects</a>
-                    <a href="#expertise" class="text-gray-300 hover:text-indigo-400 transition">Expertise</a>
-                    <a href="#contact" class="text-gray-300 hover:text-indigo-400 transition">Connect</a>
-                </div>
-                
-                <div class="flex items-center gap-2 md:gap-4">
-                    <span class="hidden sm:inline-block text-[10px] md:text-xs font-mono text-emerald-400 bg-emerald-950/30 px-2 md:px-3 py-1 md:py-1.5 rounded-full border border-emerald-500/20">ISC² Candidate</span>
-                    <i class="fas fa-bars md:hidden text-gray-400 text-lg cursor-pointer"></i>
+                    <div class="nav-links">
+                        <a href="#">Home</a>
+                        <a href="#">Case Studies</a>
+                        <a href="#">Projects</a>
+                        <a href="#">Expertise</a>
+                        <a href="#">Contact</a>
+                    </div>
+                    <div class="nav-badge">ISC² Candidate</div>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
-    <!-- Hero Section -->
-    <section id="home" style="padding-top: calc(80px + 2vh);">
-        <div class="section-container">
-            <div class="hero-grid">
-                
-                <!-- Left Column -->
-                <div>
-                    <div class="inline-flex items-center gap-2 px-2 md:px-3 py-1 md:py-1.5 rounded-full bg-indigo-950/30 border border-indigo-500/20 mb-4 md:mb-6">
-                        <span class="relative flex h-2 w-2">
-                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                        </span>
-                        <span class="text-[10px] md:text-xs font-mono text-indigo-300 tracking-wide">✦ AVAILABLE FOR GLOBAL MANDATES ✦</span>
-                    </div>
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="section-container">
+                <div class="hero-grid">
                     
-                    <h1 class="mb-4 md:mb-6">
-                        Engineering <span class="gradient-primary">AI</span> That<br>Scales & <span class="gradient-primary">Protects</span>
-                    </h1>
-                    
-                    <p class="text-gray-400 text-body mb-6 md:mb-8 max-w-xl">
-                        Senior AI/ML Engineer with 3+ years of enterprise experience. 
-                        Specializing in Computer Vision, GIS infrastructure, and Cybersecurity. 
-                        <span class="text-gray-300">8 production projects delivered.</span>
-                    </p>
-                    
-                    <!-- Stats Grid -->
-                    <div class="grid grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-10">
-                        <div>
-                            <div class="stat-number">8+</div>
-                            <div class="text-[10px] md:text-xs text-gray-500 font-mono mt-1">PRODUCTION PROJECTS</div>
+                    <!-- Left Content -->
+                    <div>
+                        <div class="status-badge">
+                            <span class="status-dot"></span>
+                            <span class="status-text">✦ AVAILABLE FOR GLOBAL MANDATES ✦</span>
                         </div>
-                        <div>
-                            <div class="stat-number">3+</div>
-                            <div class="text-[10px] md:text-xs text-gray-500 font-mono mt-1">YEARS INDUSTRY</div>
-                        </div>
-                        <div>
-                            <div class="stat-number">4</div>
-                            <div class="text-[10px] md:text-xs text-gray-500 font-mono mt-1">TECH DOMAINS</div>
-                        </div>
-                    </div>
-                    
-                    <!-- CTA Buttons -->
-                    <div class="flex flex-wrap gap-3 md:gap-4">
-                        <a href="#case-studies" class="btn-primary">
-                            <i class="fas fa-folder-open"></i>
-                            <span>View Case Studies</span>
-                        </a>
-                        <a href="#contact" class="btn-outline">
-                            <i class="fas fa-paper-plane"></i>
-                            <span>Contact Direct</span>
-                        </a>
-                    </div>
-                    
-                    <!-- Trust Indicators -->
-                    <div class="flex flex-wrap gap-3 md:gap-4 mt-6 md:mt-8 pt-4 md:pt-6 border-t border-gray-800/50">
-                        <div class="flex items-center gap-1.5 md:gap-2 text-[10px] md:text-xs text-gray-500">
-                            <i class="fas fa-check-circle text-emerald-500 text-[10px] md:text-xs"></i>
-                            <span>NDA-Compliant Documentation</span>
-                        </div>
-                        <div class="flex items-center gap-1.5 md:gap-2 text-[10px] md:text-xs text-gray-500">
-                            <i class="fas fa-shield-alt text-indigo-400 text-[10px] md:text-xs"></i>
-                            <span>ISC² Candidate</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Right Column: Profile Card -->
-                <div class="relative flex justify-center">
-                    <div class="relative group">
-                        <div class="absolute -inset-2 md:-inset-3 bg-gradient-to-r from-indigo-600 via-purple-600 to-emerald-600 rounded-2xl md:rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition duration-700"></div>
                         
-                        <div class="relative glass-card p-4 md:p-6">
-                            <div class="profile-image mx-auto mb-4 md:mb-5 overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900">
-                                <img src="SurjithKumar-JK.jpg" alt="Surjith Kumar JK" class="w-full h-full object-cover">
+                        <h1>
+                            Engineering <span class="gradient-text">AI</span><br>
+                            That Scales & <span class="gradient-text">Protects</span>
+                        </h1>
+                        
+                        <p class="bio-text">
+                            Senior AI/ML Engineer with 3+ years of enterprise experience. 
+                            Specializing in Computer Vision, GIS infrastructure, and Cybersecurity. 
+                            <strong>8 production projects delivered.</strong>
+                        </p>
+                        
+                        <!-- Stats -->
+                        <div class="stats-row">
+                            <div class="stat-item">
+                                <div class="stat-number">8+</div>
+                                <div class="stat-label">PRODUCTION PROJECTS</div>
                             </div>
-                            
-                            <div class="text-center mb-3 md:mb-4">
-                                <h3 class="text-base md:text-xl font-bold">Surjith Kumar JK</h3>
-                                <p class="text-xs md:text-sm text-indigo-400">AI/ML & Computer Vision Engineer</p>
+                            <div class="stat-item">
+                                <div class="stat-number">3+</div>
+                                <div class="stat-label">YEARS INDUSTRY</div>
                             </div>
-                            
-                            <div class="flex flex-wrap gap-1.5 md:gap-2 justify-center">
-                                <span class="px-1.5 md:px-2.5 py-1 rounded-lg bg-gray-900/60 border border-gray-700 text-[10px] md:text-xs font-mono text-indigo-300">Python</span>
-                                <span class="px-1.5 md:px-2.5 py-1 rounded-lg bg-gray-900/60 border border-gray-700 text-[10px] md:text-xs font-mono text-indigo-300">TensorFlow</span>
-                                <span class="px-1.5 md:px-2.5 py-1 rounded-lg bg-gray-900/60 border border-gray-700 text-[10px] md:text-xs font-mono text-indigo-300">OpenCV</span>
-                                <span class="px-1.5 md:px-2.5 py-1 rounded-lg bg-gray-900/60 border border-gray-700 text-[10px] md:text-xs font-mono text-emerald-300">PyTorch</span>
-                                <span class="px-1.5 md:px-2.5 py-1 rounded-lg bg-gray-900/60 border border-gray-700 text-[10px] md:text-xs font-mono text-indigo-300">QGIS</span>
-                                <span class="px-1.5 md:px-2.5 py-1 rounded-lg bg-gray-900/60 border border-gray-700 text-[10px] md:text-xs font-mono text-emerald-300">PostGIS</span>
+                            <div class="stat-item">
+                                <div class="stat-number">4</div>
+                                <div class="stat-label">TECH DOMAINS</div>
                             </div>
                         </div>
                         
-                        <!-- Floating Icons -->
-                        <div class="absolute -top-2 -right-2 md:-top-4 md:-right-4 w-7 h-7 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-indigo-950/60 border border-indigo-500/30 flex items-center justify-center backdrop-blur-sm animate-pulse">
-                            <i class="fas fa-brain text-indigo-400 text-sm md:text-lg"></i>
+                        <!-- Buttons -->
+                        <div class="btn-group">
+                            <a href="#" class="btn-primary">
+                                <i class="fas fa-folder-open"></i> View Case Studies
+                            </a>
+                            <a href="#" class="btn-outline">
+                                <i class="fas fa-paper-plane"></i> Contact Direct
+                            </a>
                         </div>
-                        <div class="absolute -bottom-2 -left-2 md:-bottom-4 md:-left-4 w-7 h-7 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-emerald-950/60 border border-emerald-500/30 flex items-center justify-center backdrop-blur-sm">
-                            <i class="fas fa-shield-haltered text-emerald-400 text-sm md:text-lg"></i>
+                        
+                        <!-- Trust Badges -->
+                        <div class="trust-badges">
+                            <div class="trust-item"><i class="fas fa-check-circle" style="color: #10B981; font-size: 10px;"></i> NDA-Compliant</div>
+                            <div class="trust-item"><i class="fas fa-shield-alt" style="color: #60A5FA; font-size: 10px;"></i> ISC² Candidate</div>
+                            <div class="trust-item"><i class="fas fa-globe" style="color: #34D399; font-size: 10px;"></i> Global Remote</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right: Profile Card -->
+                    <div class="profile-wrapper">
+                        <div class="profile-card">
+                            <div class="float-icon float-1">
+                                <i class="fas fa-brain" style="color: #60A5FA; font-size: 14px;"></i>
+                            </div>
+                            <div class="float-icon float-2">
+                                <i class="fas fa-shield-haltered" style="color: #34D399; font-size: 14px;"></i>
+                            </div>
+                            
+                            <div class="profile-image">
+                                <img src="SurjithKumar-JK.jpg" alt="Surjith Kumar JK">
+                            </div>
+                            
+                            <div class="profile-name">Surjith Kumar JK</div>
+                            <div class="profile-title">AI/ML & Computer Vision Engineer</div>
+                            
+                            <div class="tech-badges">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">TensorFlow</span>
+                                <span class="tech-badge">OpenCV</span>
+                                <span class="tech-badge">PyTorch</span>
+                                <span class="tech-badge">QGIS</span>
+                                <span class="tech-badge">PostGIS</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- About / Bio Section -->
-    <section style="padding-top: 0;">
-        <div class="section-container">
-            <div class="glass-card p-6 md:p-10 max-w-4xl mx-auto">
-                <div class="text-center mb-4 md:mb-6">
-                    <span class="section-tag">✦ The Vision ✦</span>
-                </div>
-                <p class="text-gray-300 leading-relaxed text-center text-body">
-                    A strategic technical innovator with a proven track record in <span class="text-indigo-400">AI, GIS, Computer Vision and Cybersecurity</span>. 
-                    I design and deliver high-impact, performance-focused solutions to complex industry challenges, applying deep expertise 
-                    in Python, AI and advanced image analytics. Recognized for leading mission-critical initiatives, resolving high-stakes 
-                    client issues, and driving projects to successful completion with a research-driven and hands-on approach—bridging 
-                    technical precision with business goals to create innovation that scales, endures, and sets new standards.
-                </p>
-                <div class="mt-4 md:mt-6 flex flex-wrap justify-center gap-3 md:gap-4 text-xs md:text-sm text-gray-500">
-                    <span><i class="fas fa-map-marker-alt text-indigo-400 mr-1"></i> India</span>
-                    <span><i class="fas fa-globe text-emerald-400 mr-1"></i> Global Remote</span>
-                    <span><i class="fas fa-clock text-indigo-400 mr-1"></i> UTC+5:30</span>
+        <!-- Domain Expertise Section -->
+        <div class="domains-section">
+            <div class="section-container">
+                <div class="domains-grid">
+                    <div class="domain-card">
+                        <div class="domain-icon ai"><i class="fas fa-brain"></i></div>
+                        <div class="domain-info">
+                            <h4>AI & Computer Vision</h4>
+                            <p>94.2% mAP | 23ms inference | YOLOv8, TensorFlow</p>
+                        </div>
+                    </div>
+                    <div class="domain-card">
+                        <div class="domain-icon security"><i class="fas fa-shield-virus"></i></div>
+                        <div class="domain-info">
+                            <h4>Cybersecurity</h4>
+                            <p>99.1% detection | &lt;1% FPR | Threat Intelligence</p>
+                        </div>
+                    </div>
+                    <div class="domain-card">
+                        <div class="domain-icon gis"><i class="fas fa-map-marked-alt"></i></div>
+                        <div class="domain-info">
+                            <h4>GIS & GPS</h4>
+                            <p>23% time saved | 87% accuracy | PostGIS, QGIS</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Case Studies Section (7 Projects) -->
-    <section id="case-studies">
-        <div class="section-container">
-            <div class="text-center mb-8 md:mb-12">
-                <span class="section-tag">✦ CASE STUDIES ✦</span>
-                <h2 class="mb-3 md:mb-4">Production <span class="gradient-primary">Projects</span></h2>
-                <p class="text-gray-400 text-body max-w-2xl mx-auto">7 enterprise projects delivered under NDA. Detailed case studies available for qualified inquiries.</p>
+        <!-- Footer -->
+        <div class="footer">
+            <div class="section-container">
+                <div class="footer-text">
+                    © 2026 Surjith Kumar JK — AI + Cybersecurity + GIS Infrastructure
+                </div>
             </div>
-            
-            <div class="grid-3">
-                
-                <!-- Case Study 1 -->
-                <div class="glass-card">
-                    <div class="h-1 md:h-2 w-20 md:w-24 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full mb-4"></div>
-                    <div class="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
-                        <div class="w-7 h-7 md:w-9 md:h-9 rounded-lg bg-indigo-950/40 flex items-center justify-center">
-                            <i class="fas fa-eye text-indigo-400 text-sm md:text-base"></i>
-                        </div>
-                        <span class="text-[10px] md:text-xs text-indigo-400 font-mono">COMPUTER VISION</span>
-                    </div>
-                    <h3 class="text-base md:text-lg font-bold mb-2">Real-Time Object Detection</h3>
-                    <p class="text-gray-400 text-xs md:text-sm mb-3 md:mb-4">94.2% mAP at 23ms inference for autonomous perception.</p>
-                    <div class="flex flex-wrap gap-1.5 md:gap-2 mb-3 md:mb-4">
-                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">YOLOv8</span>
-                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">TensorRT</span>
-                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">AWS</span>
-                    </div>
-                    <a href="#" class="text-indigo-400 hover:text-indigo-300 text-xs md:text-sm font-medium inline-flex items-center gap-1">View Case Study →</a>
-                </div>
-                
-                <!-- Case Study 2 -->
-                <div class="glass-card">
-                    <div class="h-1 md:h-2 w-20 md:w-24 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full mb-4"></div>
-                    <div class="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
-                        <div class="w-7 h-7 md:w-9 md:h-9 rounded-lg bg-emerald-950/40 flex items-center justify-center">
-                            <i class="fas fa-shield-virus text-emerald-400 text-sm md:text-base"></i>
-                        </div>
-                        <span class="text-[10px] md:text-xs text-emerald-400 font-mono">CYBERSECURITY</span>
-                    </div>
-                    <h3 class="text-base md:text-lg font-bold mb-2">Network Intrusion Detection</h3>
-                    <p class="text-gray-400 text-xs md:text-sm mb-3 md:mb-4">99.1% accuracy, &lt;1% FPR for enterprise networks.</p>
-                    <div class="flex flex-wrap gap-1.5 md:gap-2 mb-3 md:mb-4">
-                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">TensorFlow</span>
-                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">Scapy</span>
-                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">Kafka</span>
-                    </div>
-                    <a href="#" class="text-indigo-400 hover:text-indigo-300 text-xs md:text-sm font-medium inline-flex items-center gap-1">View Case Study →</a>
-                </div>
-                
-                <!-- Case Study 3 -->
-                <div class="glass-card">
-                    <div class="h-1 md:h-2 w-20 md:w-24 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-4"></div>
-                    <div class="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
-                        <div class="w-7 h-7 md:w-9 md:h-9 rounded-lg bg-purple-950/40 flex items-center justify-center">
-                            <i class="fas fa-map-marked-alt text-purple-400 text-sm md:text-base"></i>
-                        </div>
-                        <span class="text-[10px] md:text-xs text-purple-400 font-mono">GIS / GPS</span>
-                    </div>
-                    <h3 class="text-base md:text-lg font-bold mb-2">GPS Fleet Optimizer</h3>
-                    <p class="text-gray-400 text-xs md:text-sm mb-3 md:mb-4">23% time reduction, 15% fuel savings for logistics.</p>
-                    <div class="flex flex-wrap gap-1.5 md:gap-2 mb-3 md:mb-4">
-                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">PostGIS</span>
-                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">OR-Tools</span>
-                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">Leaflet</span>
-                    </div>
-                    <a href="#" class="text-indigo-400 hover:text-indigo-300 text-xs md:text-sm font-medium inline-flex items-center gap-1">View Case Study →</a>
-                </div>
-                
-                <!-- Case Study 4 -->
-                <div class="glass-card">
-                    <div class="h-1 md:h-2 w-20 md:w-24 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full mb-4"></div>
-                    <div class="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
-                        <div class="w-7 h-7 md:w-9 md:h-9 rounded-lg bg-blue-950/40 flex items-center justify-center">
-                            <i class="fas fa-satellite text-blue-400 text-sm md:text-base"></i>
-                        </div>
-                        <span class="text-[10px] md:text-xs text-blue-400 font-mono">GIS + CV</span>
-                    </div>
-                    <h3 class="text-base md:text-lg font-bold mb-2">Satellite Image Analysis</h3>
-                    <p class="text-gray-400 text-xs md:text-sm mb-3 md:mb-4">87% land cover classification across multispectral data.</p>
-                    <div class="flex flex-wrap gap-1.5 md:gap-2 mb-3 md:mb-4">
-                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">PyTorch</span>
-                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">GDAL</span>
-                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">QGIS</span>
-                    </div>
-                    <a href="#" class="text-indigo-400 hover:text-indigo-300 text-xs md:text-sm font-medium inline-flex items-center gap-1">View Case Study →</a>
-                </div>
-                
-                <!-- Case Study 5 -->
-                <div class="glass-card">
-                    <div class="h-1 md:h-2 w-20 md:w-24 bg-gradient-to-r from-rose-500 to-red-500 rounded-full mb-4"></div>
-                    <div class="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
-                        <div class="w-7 h-7 md:w-9 md:h-9 rounded-lg bg-rose-950/40 flex items-center justify-center">
-                            <i class="fas fa-user-secret text-rose-400 text-sm md:text-base"></i>
-                        </div>
-                        <span class="text-[10px] md:text-xs text-rose-400 font-mono">CV + SECURITY</span>
-                    </div>
-                    <h3 class="text-base md:text-lg font-bold mb-2">Facial Recognition System</h3>
-                    <p class="text-gray-400 text-xs md:text-sm mb-3 md:mb-4">&lt;0.1% false accept rate, real-time matching.</p>
-                    <div class="flex flex-wrap gap-1.5 md:gap-2 mb-3 md:mb-4">
-                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">FaceNet</span>
-                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">OpenCV</span>
-                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">Docker</span>
-                    </div>
-                    <a href="#" class="text-indigo-400 hover:text-indigo-300 text-xs md:text-sm font-medium inline-flex items-center gap-1">View Case Study →</a>
-                </div>
-                
-                <!-- Case Study 6 -->
-                <div class="glass-card">
-                    <div class="h-1 md:h-2 w-20 md:w-24 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full mb-4"></div>
-                    <div class="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
-                        <div class="w-7 h-7 md:w-9 md:h-9 rounded-lg bg-amber-950/40 flex items-center justify-center">
-                            <i class="fas fa-water text-amber-400 text-sm md:text-base"></i>
-                        </div>
-                        <span class="text-[10px] md:text-xs text-amber-400 font-mono">GIS + AI</span>
-                    </div>
-                    <h3 class="text-base md:text-lg font-bold mb-2">Flood Risk Mapping</h3>
-                    <p class="text-gray-400 text-xs md:text-sm mb-3 md:mb-4">Real-time flood prediction with 15-minute lead time.</p>
-                    <div class="flex flex-wrap gap-1.5 md:gap-2 mb-3 md:mb-4">
-                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">XGBoost</span>
-                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">PostGIS</span>
-                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">FastAPI</span>
-                    </div>
-                    <a href="#" class="text-indigo-400 hover:text-indigo-300 text-xs md:text-sm font-medium inline-flex items-center gap-1">View Case Study →</a>
-                </div>
-                
-                <!-- Case Study 7 -->
-                <div class="glass-card">
-                    <div class="h-1 md:h-2 w-20 md:w-24 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full mb-4"></div>
-                    <div class="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
-                        <div class="w-7 h-7 md:w-9 md:h-9 rounded-lg bg-indigo-950/40 flex items-center justify-center">
-                            <i class="fas fa-microchip text-indigo-400 text-sm md:text-base"></i>
-                        </div>
-                        <span class="text-[10px] md:text-xs text-indigo-400 font-mono">ADAS + CV</span>
-                    </div>
-                    <h3 class="text-base md:text-lg font-bold mb-2">Drone Path Planning</h3>
-                    <p class="text-gray-400 text-xs md:text-sm mb-3 md:mb-4">98% autonomous navigation success in urban environments.</p>
-                    <div class="flex flex-wrap gap-1.5 md:gap-2 mb-3 md:mb-4">
-                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">A* Algorithm</span>
-                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">OpenCV</span>
-                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-
+        </div>
+    </div>
+
+</body>
+</html>
