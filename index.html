@@ -5,20 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Surjith Kumar JK | AI Engineering & Cybersecurity</title>
     
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Surjith Kumar JK - AI/ML Engineer, Cybersecurity Specialist, GIS Architect. 8+ production projects, 3+ years experience.">
-    <meta name="keywords" content="AI Engineer, Cybersecurity, GIS, Computer Vision, Machine Learning, Python, TensorFlow">
+    <meta name="description" content="Surjith Kumar JK - AI/ML Engineer, Cybersecurity Specialist, GIS Architect. 8+ production projects.">
+    <meta name="keywords" content="AI Engineer, Cybersecurity, GIS, Computer Vision, Machine Learning">
     <meta name="author" content="Surjith Kumar JK">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph -->
     <meta property="og:title" content="Surjith Kumar JK | AI Engineering & Cybersecurity">
     <meta property="og:description" content="Senior AI/ML Engineer specializing in Computer Vision, GIS, and Cybersecurity.">
     <meta property="og:image" content="SurjithKumar-JK.jpg">
     <meta property="og:type" content="profile">
-    <meta property="og:url" content="https://SurjithKumar-JK.github.io">
     
-    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
@@ -26,15 +20,13 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background: #0A0A0F; color: #EAEAEF; overflow-x: hidden; }
         
-        /* Background Effects */
         .bg-gradient { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.06) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.04) 0%, transparent 50%); z-index: 0; pointer-events: none; }
         .grid-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px); background-size: 50px 50px; z-index: 0; pointer-events: none; }
         
-        /* Main Layout */
         .app { min-height: 100vh; position: relative; z-index: 2; display: flex; flex-direction: column; }
         .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
         
-        /* Navigation */
+        /* Navigation - IMPROVED ALIGNMENT */
         .nav { padding: 16px 0; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255, 255, 255, 0.05); background: rgba(10, 10, 15, 0.7); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; }
         .logo-area { display: flex; align-items: center; gap: 12px; }
         .logo-box { width: 38px; height: 38px; background: linear-gradient(135deg, #3B82F6, #10B981); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
@@ -42,18 +34,21 @@
         .logo-text { font-size: 18px; font-weight: 700; font-family: 'Syne', sans-serif; }
         .logo-text .first-name { color: #EAEAEF; }
         .logo-text .last-name { color: #94A3B8; font-weight: 500; }
-        .nav-links { display: flex; gap: 28px; }
-        .nav-links a { color: #9CA3AF; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
-        .nav-links a:hover, .nav-links a.active { color: #60A5FA; }
+        
+        .nav-links { display: flex; gap: 28px; align-items: center; }
+        .nav-links a { color: #9CA3AF; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; padding: 8px 0; }
+        .nav-links a:hover, .nav-links a.active { color: #60A5FA; border-bottom: 2px solid #60A5FA; }
+        
         .mobile-menu-btn { display: none; background: none; border: none; color: #9CA3AF; font-size: 22px; cursor: pointer; }
         .isc2-badge { font-size: 11px; font-family: monospace; color: #34D399; background: rgba(16, 185, 129, 0.1); padding: 5px 14px; border-radius: 40px; border: 1px solid rgba(16, 185, 129, 0.2); }
         
-        /* Sections */
+        /* Right side group */
+        .nav-right { display: flex; align-items: center; gap: 20px; }
+        
         section { padding: 80px 0; scroll-margin-top: 80px; }
         .section-title { font-size: 40px; font-weight: 700; font-family: 'Syne', sans-serif; margin-bottom: 50px; text-align: center; }
         .section-title span { background: linear-gradient(135deg, #60A5FA, #A78BFA, #34D399); -webkit-background-clip: text; background-clip: text; color: transparent; }
         
-        /* Home Grid */
         .home-grid { display: grid; grid-template-columns: 1fr 0.8fr; gap: 60px; align-items: center; }
         .availability { display: inline-flex; align-items: center; gap: 8px; background: rgba(59, 130, 246, 0.08); border: 1px solid rgba(59, 130, 246, 0.15); border-radius: 40px; padding: 5px 14px; margin-bottom: 24px; }
         .live-dot { width: 7px; height: 7px; background: #10B981; border-radius: 50%; animation: pulse 1.5s infinite; }
@@ -74,7 +69,6 @@
         .trust { display: flex; gap: 24px; flex-wrap: wrap; }
         .trust-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: #6B7280; }
         
-        /* Profile Card */
         .profile-card { background: rgba(20, 24, 35, 0.5); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 24px; padding: 28px; position: relative; }
         .profile-img { width: 180px; height: 180px; border-radius: 20px; overflow: hidden; margin: 0 auto 16px; }
         .profile-img img { width: 100%; height: 100%; object-fit: cover; }
@@ -86,7 +80,6 @@
         .floating-1 { top: -12px; right: -12px; }
         .floating-2 { bottom: -12px; left: -12px; background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.3); }
         
-        /* Profile Details Section */
         .profile-details { background: rgba(20, 24, 35, 0.3); border-radius: 24px; padding: 40px; border: 1px solid rgba(255, 255, 255, 0.05); }
         .profile-details-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
         .detail-item { display: flex; align-items: flex-start; gap: 15px; }
@@ -96,7 +89,6 @@
         .bio-section { margin-top: 40px; padding: 30px; background: rgba(20, 24, 35, 0.2); border-radius: 20px; text-align: center; }
         .bio-section p { font-size: 15px; color: #9CA3AF; line-height: 1.6; max-width: 800px; margin: 0 auto; }
         
-        /* Projects Grid */
         .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         .project-card { background: rgba(20, 24, 35, 0.5); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 20px; padding: 24px; transition: all 0.3s; }
         .project-card:hover { transform: translateY(-5px); border-color: rgba(59, 130, 246, 0.3); }
@@ -105,9 +97,7 @@
         .project-card p { font-size: 13px; color: #9CA3AF; margin-bottom: 15px; line-height: 1.5; }
         .project-tech { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
         .project-tech span { font-size: 10px; padding: 4px 12px; background: rgba(30, 41, 59, 0.5); border-radius: 20px; color: #94A3B8; }
-        .project-link { color: #60A5FA; font-size: 13px; text-decoration: none; font-weight: 500; }
         
-        /* Domain Cards */
         .domain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
         .domain-card { background: rgba(20, 24, 35, 0.4); border: 1px solid rgba(255, 255, 255, 0.04); border-radius: 16px; padding: 16px 20px; display: flex; align-items: center; gap: 16px; transition: all 0.2s; }
         .domain-card:hover { border-color: rgba(59, 130, 246, 0.2); background: rgba(59, 130, 246, 0.04); }
@@ -118,7 +108,6 @@
         .domain-info h4 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
         .domain-info p { font-size: 11px; color: #6B7280; }
         
-        /* Contact Grid */
         .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 900px; margin: 0 auto 50px; }
         .contact-card { background: rgba(20, 24, 35, 0.5); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 20px; padding: 35px 25px; text-align: center; transition: all 0.3s; }
         .contact-card:hover { transform: translateY(-5px); border-color: rgba(59, 130, 246, 0.3); }
@@ -130,13 +119,11 @@
         .availability-card h3 { font-size: 22px; margin-bottom: 15px; }
         .response-time { margin-top: 20px; display: inline-flex; align-items: center; gap: 8px; background: rgba(16, 185, 129, 0.1); padding: 8px 20px; border-radius: 40px; font-size: 12px; color: #34D399; }
         
-        /* Footer */
         .footer { padding: 20px 0; border-top: 1px solid rgba(255, 255, 255, 0.04); text-align: center; background: rgba(10, 10, 15, 0.6); margin-top: auto; }
         .footer-text { font-size: 10px; color: #4B5563; font-family: monospace; }
         
-        /* Responsive */
         @media (max-width: 768px) {
-            .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(10, 10, 15, 0.95); flex-direction: column; padding: 20px; gap: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+            .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(10, 10, 15, 0.95); flex-direction: column; padding: 20px; gap: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); align-items: flex-start; }
             .nav-links.active { display: flex; }
             .mobile-menu-btn { display: block; }
             .home-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -156,13 +143,14 @@
 <div class="grid-overlay"></div>
 
 <div class="app">
-    <!-- Navigation -->
+    <!-- Navigation - IMPROVED ALIGNMENT -->
     <div class="nav">
         <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
             <div class="logo-area">
                 <div class="logo-box"><span>SK</span></div>
                 <div class="logo-text"><span class="first-name">Surjith</span><span class="last-name"> Kumar JK</span></div>
             </div>
+            
             <div class="nav-links" id="navLinks">
                 <a href="Index.html" class="active">Home</a>
                 <a href="Profile.html">Profile</a>
@@ -171,7 +159,8 @@
                 <a href="Expertise.html">Expertise</a>
                 <a href="Contact.html">Contact</a>
             </div>
-            <div style="display: flex; gap: 16px; align-items: center;">
+            
+            <div class="nav-right">
                 <div class="isc2-badge">ISC² Candidate</div>
                 <button class="mobile-menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
             </div>
@@ -246,10 +235,10 @@
         <div class="container">
             <h2 class="section-title">Featured <span>Projects</span></h2>
             <div class="projects-grid">
-                <div class="project-card"><div class="project-icon"><i class="fas fa-comment-dots"></i></div><h3>AI Code Reviewer</h3><p>LLM-powered code analysis tool for security vulnerability detection, bug identification, and code quality improvement.</p><div class="project-tech"><span>LangChain</span><span>OpenAI API</span><span>Streamlit</span></div><a href="#" class="project-link">View on GitHub →</a></div>
-                <div class="project-card"><div class="project-icon"><i class="fas fa-map-marked-alt"></i></div><h3>GPS Track Visualizer</h3><p>Interactive web application for uploading GPX files, visualizing GPS tracks on interactive maps, and analyzing route statistics.</p><div class="project-tech"><span>Streamlit</span><span>Folium</span><span>Pandas</span></div><a href="#" class="project-link">Live Demo →</a></div>
-                <div class="project-card"><div class="project-icon"><i class="fas fa-shield-virus"></i></div><h3>Threat Intelligence Feed</h3><p>Real-time aggregator of open-source threat intelligence feeds with automated deduplication and export capabilities.</p><div class="project-tech"><span>Python</span><span>Redis</span><span>BeautifulSoup</span></div><a href="#" class="project-link">View on GitHub →</a></div>
-                <div class="project-card"><div class="project-icon"><i class="fas fa-chart-line"></i></div><h3>Anomaly Detection Dashboard</h3><p>Real-time monitoring dashboard for system metrics with Isolation Forest anomaly detection and alerting system.</p><div class="project-tech"><span>Plotly Dash</span><span>scikit-learn</span><span>Redis</span></div><a href="#" class="project-link">Live Demo →</a></div>
+                <div class="project-card"><div class="project-icon"><i class="fas fa-comment-dots"></i></div><h3>AI Code Reviewer</h3><p>LLM-powered code analysis tool for security vulnerability detection, bug identification, and code quality improvement.</p><div class="project-tech"><span>LangChain</span><span>OpenAI API</span><span>Streamlit</span></div></div>
+                <div class="project-card"><div class="project-icon"><i class="fas fa-map-marked-alt"></i></div><h3>GPS Track Visualizer</h3><p>Interactive web application for uploading GPX files, visualizing GPS tracks on interactive maps, and analyzing route statistics.</p><div class="project-tech"><span>Streamlit</span><span>Folium</span><span>Pandas</span></div></div>
+                <div class="project-card"><div class="project-icon"><i class="fas fa-shield-virus"></i></div><h3>Threat Intelligence Feed</h3><p>Real-time aggregator of open-source threat intelligence feeds with automated deduplication and export capabilities.</p><div class="project-tech"><span>Python</span><span>Redis</span><span>BeautifulSoup</span></div></div>
+                <div class="project-card"><div class="project-icon"><i class="fas fa-chart-line"></i></div><h3>Anomaly Detection Dashboard</h3><p>Real-time monitoring dashboard for system metrics with Isolation Forest anomaly detection and alerting system.</p><div class="project-tech"><span>Plotly Dash</span><span>scikit-learn</span><span>Redis</span></div></div>
             </div>
         </div>
     </section>
@@ -310,7 +299,6 @@
         document.getElementById('navLinks').classList.toggle('active');
     }
     
-    // Close mobile menu when clicking a link
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', function() {
             document.getElementById('navLinks').classList.remove('active');
