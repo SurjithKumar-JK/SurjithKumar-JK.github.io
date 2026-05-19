@@ -2,23 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Surjith Kumar JK | AI + Cybersecurity + GIS Engineering</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Surjith Kumar JK | AI Engineering & Cybersecurity Intelligence</title>
     
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Portfolio of Surjith Kumar JK: AI/ML Engineer, Cybersecurity Specialist, and GIS Expert. 8+ projects, 3+ years experience in Computer Vision, RF, ADAS, and secure infrastructure.">
-    <meta name="keywords" content="Surjith Kumar JK, AI Engineer, Cybersecurity, GIS, Computer Vision, ADAS, Python, Machine Learning">
+    <!-- SEO & Brand Meta -->
+    <meta name="description" content="Surjith Kumar JK - AI/ML Engineer, Cybersecurity Specialist, GIS Architect. 8+ production projects, 3+ years industry experience.">
+    <meta name="keywords" content="AI Engineer, Cybersecurity, GIS, Computer Vision, Machine Learning, Python">
     <meta name="author" content="Surjith Kumar JK">
     <meta name="robots" content="index, follow">
-
-    <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="Surjith Kumar JK | AI + Cybersecurity + GIS Engineering">
-    <meta property="og:description" content="Senior Engineer specializing in AI/ML, Computer Vision, GIS, and Cybersecurity infrastructure.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Surjith Kumar JK | AI Engineering & Cybersecurity Intelligence">
+    <meta property="og:description" content="Senior AI/ML Engineer specializing in Computer Vision, GIS, and Cybersecurity.">
     <meta property="og:image" content="SurjithKumar-JK.jpg">
     <meta property="og:type" content="profile">
     
-    <!-- Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
@@ -31,413 +31,533 @@
         body {
             font-family: 'Inter', sans-serif;
             background: #0A0A0F;
-            color: #E8EDF2;
-            line-height: 1.5;
+            color: #EAEAEF;
+            overflow-x: hidden;
             scroll-behavior: smooth;
+            font-size: clamp(14px, 1vw, 16px);
         }
 
-        .mono {
-            font-family: 'JetBrains Mono', monospace;
+        /* Fluid Typography */
+        h1, h2, h3, .brand-font {
+            font-family: 'Syne', sans-serif;
         }
 
-        /* Custom gradient text */
-        .gradient-text {
+        /* Responsive Container - Perfect Fit for Any Resolution */
+        .section-container {
+            width: 100%;
+            max-width: min(90%, 1280px);
+            margin: 0 auto;
+            padding: 0 clamp(16px, 4vw, 32px);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Section Spacing - Scales with Viewport */
+        section {
+            padding: clamp(50px, 8vh, 100px) 0;
+        }
+
+        /* Responsive Grid System */
+        .grid-responsive {
+            display: grid;
+            gap: clamp(16px, 2vw, 24px);
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+        }
+
+        .grid-4 {
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+        }
+
+        @media (min-width: 1024px) {
+            .lg-grid-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Animated Background - Fixed Scale */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.06) 0%, transparent 50%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .grid-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: clamp(30px, 4vw, 60px) clamp(30px, 4vw, 60px);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Glass Components - Responsive */
+        .glass-nav {
+            background: rgba(10, 10, 15, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: clamp(12px, 2vh, 20px) 0;
+        }
+
+        .glass-card {
+            background: rgba(20, 24, 35, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            border-radius: clamp(12px, 2vw, 20px);
+            padding: clamp(16px, 3vw, 24px);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(59, 130, 246, 0.3);
+            transform: translateY(-4px);
+        }
+
+        /* Gradient Text - Fluid */
+        .gradient-primary {
             background: linear-gradient(135deg, #60A5FA 0%, #A78BFA 50%, #34D399 100%);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
 
-        /* Glass morphism */
-        .glass {
-            background: rgba(15, 23, 42, 0.6);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+        /* Responsive Buttons */
+        .btn-primary, .btn-outline {
+            padding: clamp(10px, 1.5vh, 14px) clamp(20px, 4vw, 32px);
+            border-radius: clamp(10px, 1.5vw, 14px);
+            font-size: clamp(12px, 1vw, 14px);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            text-decoration: none;
         }
 
-        /* Animated background grid */
-        .grid-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(rgba(96, 165, 250, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(96, 165, 250, 0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
-            pointer-events: none;
-            z-index: 0;
+        .btn-primary {
+            background: linear-gradient(105deg, #1E293B 0%, #0F172A 100%);
+            border: 1px solid rgba(59, 130, 246, 0.3);
         }
 
-        /* Orb animation */
-        .orb {
-            position: fixed;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.4;
-            pointer-events: none;
-            z-index: 0;
-        }
-        
-        .orb-1 {
-            top: -20%;
-            right: -10%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(96, 165, 250, 0.4), rgba(96, 165, 250, 0));
-            animation: float 20s infinite ease-in-out;
-        }
-        
-        .orb-2 {
-            bottom: -10%;
-            left: -5%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(52, 211, 153, 0.3), rgba(52, 211, 153, 0));
-            animation: float 18s infinite ease-in-out reverse;
-        }
-        
-        .orb-3 {
-            top: 40%;
-            left: 30%;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(167, 139, 250, 0.3), rgba(167, 139, 250, 0));
-            animation: float 25s infinite ease-in-out;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(30px, -30px) scale(1.05); }
-        }
-
-        /* Card hover effect */
-        .card-hover {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-4px);
-            border-color: rgba(96, 165, 250, 0.3);
-            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Skill badge styling */
-        .skill-badge {
-            background: rgba(30, 41, 59, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            transition: all 0.2s ease;
-        }
-        
-        .skill-badge:hover {
-            border-color: rgba(96, 165, 250, 0.4);
-            background: rgba(96, 165, 250, 0.1);
+        .btn-primary:hover {
+            border-color: #3B82F6;
             transform: translateY(-2px);
         }
 
-        /* Smooth scroll container */
-        .container-custom {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 24px;
-            position: relative;
-            z-index: 2;
+        .btn-outline {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* Section styling */
-        section {
-            margin: 80px 0;
+        .btn-outline:hover {
+            border-color: rgba(59, 130, 246, 0.5);
+            background: rgba(59, 130, 246, 0.05);
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .container-custom {
-                padding: 0 20px;
+        /* Section Tag */
+        .section-tag {
+            display: inline-block;
+            padding: 4px clamp(10px, 2vw, 14px);
+            background: rgba(59, 130, 246, 0.08);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 40px;
+            font-size: clamp(10px, 0.8vw, 12px);
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #60A5FA;
+            margin-bottom: 16px;
+        }
+
+        /* Stats Numbers */
+        .stat-number {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-weight: 700;
+            font-family: 'Syne', sans-serif;
+            background: linear-gradient(135deg, #fff 0%, #A78BFA 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Profile Image Container */
+        .profile-image {
+            width: clamp(200px, 30vw, 280px);
+            height: clamp(200px, 30vw, 280px);
+            border-radius: clamp(16px, 2vw, 20px);
+            overflow: hidden;
+        }
+
+        /* Headings */
+        h1 {
+            font-size: clamp(2rem, 6vw, 4rem);
+            line-height: 1.1;
+        }
+
+        h2 {
+            font-size: clamp(1.5rem, 4.5vw, 2.5rem);
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+        }
+
+        /* Text Sizes */
+        .text-body {
+            font-size: clamp(0.875rem, 1.8vw, 1rem);
+            line-height: 1.5;
+        }
+
+        /* Hero Layout - Responsive */
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: clamp(32px, 6vh, 64px);
+            align-items: center;
+        }
+
+        @media (min-width: 1024px) {
+            .hero-grid {
+                grid-template-columns: 1fr 0.8fr;
             }
-            section {
-                margin: 60px 0;
-            }
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: clamp(24px, 4vh, 40px) 0;
+            margin-top: clamp(40px, 6vh, 60px);
+        }
+
+        /* Hide scrollbar but keep functionality */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1a1a2e;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #3B82F6;
+            border-radius: 3px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Ambient orbs & grid -->
-    <div class="grid-bg"></div>
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
+    <div class="animated-bg"></div>
+    <div class="grid-pattern"></div>
 
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 w-full z-50 py-4 glass">
-        <div class="container-custom flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <div class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
-                <span class="mono text-xs text-gray-400 tracking-wider">SURJITH KUMAR JK</span>
-            </div>
-            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-300">
-                <a href="#home" class="hover:text-indigo-400 transition">Home</a>
-                <a href="#expertise" class="hover:text-indigo-400 transition">Expertise</a>
-                <a href="#domains" class="hover:text-indigo-400 transition">Domains</a>
-                <a href="#contact" class="hover:text-indigo-400 transition">Connect</a>
-            </div>
-            <div class="mono text-xs text-indigo-400 bg-indigo-950/40 px-3 py-1.5 rounded-full border border-indigo-500/20">
-                ISC² Candidate
+    <nav class="glass-nav fixed top-0 left-0 w-full z-50">
+        <div class="section-container">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center gap-2 md:gap-3">
+                    <div class="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-emerald-500 flex items-center justify-center">
+                        <span class="text-white font-bold text-xs md:text-sm">SK</span>
+                    </div>
+                    <span class="font-bold text-base md:text-lg tracking-tight">Surjith<span class="gradient-primary">.AI</span></span>
+                </div>
+                
+                <div class="hidden md:flex gap-6 lg:gap-8 text-sm font-medium">
+                    <a href="#home" class="text-gray-300 hover:text-indigo-400 transition">Home</a>
+                    <a href="#case-studies" class="text-gray-300 hover:text-indigo-400 transition">Case Studies</a>
+                    <a href="#side-projects" class="text-gray-300 hover:text-indigo-400 transition">Projects</a>
+                    <a href="#expertise" class="text-gray-300 hover:text-indigo-400 transition">Expertise</a>
+                    <a href="#contact" class="text-gray-300 hover:text-indigo-400 transition">Connect</a>
+                </div>
+                
+                <div class="flex items-center gap-2 md:gap-4">
+                    <span class="hidden sm:inline-block text-[10px] md:text-xs font-mono text-emerald-400 bg-emerald-950/30 px-2 md:px-3 py-1 md:py-1.5 rounded-full border border-emerald-500/20">ISC² Candidate</span>
+                    <i class="fas fa-bars md:hidden text-gray-400 text-lg cursor-pointer"></i>
+                </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <main id="home" style="padding-top: 100px;">
-        <div class="container-custom">
-            <div class="flex flex-col lg:flex-row gap-12 items-center">
-                <!-- Profile Image -->
-                <div class="relative flex-shrink-0 group">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-emerald-500 rounded-2xl blur-xl opacity-40 group-hover:opacity-70 transition duration-500"></div>
-                    <div class="relative w-56 h-56 md:w-72 md:h-72 rounded-2xl overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 border border-white/10">
-                        <img src="SurjithKumar-JK.jpg" alt="Surjith Kumar JK" class="w-full h-full object-cover">
-                    </div>
-                </div>
-
-                <!-- Hero Text -->
-                <div class="flex-1 text-center lg:text-left">
-                    <div class="inline-block mb-4 px-3 py-1 rounded-full bg-indigo-950/30 border border-indigo-500/20">
-                        <span class="mono text-xs text-indigo-300 tracking-wider">✦ SENIOR ENGINEER ✦</span>
+    <section id="home" style="padding-top: calc(80px + 2vh);">
+        <div class="section-container">
+            <div class="hero-grid">
+                
+                <!-- Left Column -->
+                <div>
+                    <div class="inline-flex items-center gap-2 px-2 md:px-3 py-1 md:py-1.5 rounded-full bg-indigo-950/30 border border-indigo-500/20 mb-4 md:mb-6">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                        </span>
+                        <span class="text-[10px] md:text-xs font-mono text-indigo-300 tracking-wide">✦ AVAILABLE FOR GLOBAL MANDATES ✦</span>
                     </div>
                     
-                    <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-4">
-                        Surjith Kumar JK
+                    <h1 class="mb-4 md:mb-6">
+                        Engineering <span class="gradient-primary">AI</span> That<br>Scales & <span class="gradient-primary">Protects</span>
                     </h1>
                     
-                    <p class="text-xl md:text-2xl font-semibold mb-6">
-                        <span class="gradient-text">AI/ML & Computer Vision</span>
-                        <span class="text-gray-500 mx-2">|</span>
-                        <span class="gradient-text">GIS & GPS</span>
-                        <span class="text-gray-500 mx-2">|</span>
-                        <span class="gradient-text">Cybersecurity</span>
+                    <p class="text-gray-400 text-body mb-6 md:mb-8 max-w-xl">
+                        Senior AI/ML Engineer with 3+ years of enterprise experience. 
+                        Specializing in Computer Vision, GIS infrastructure, and Cybersecurity. 
+                        <span class="text-gray-300">8 production projects delivered.</span>
                     </p>
                     
-                    <p class="text-gray-400 leading-relaxed max-w-2xl mb-8 text-sm md:text-base">
-                        A strategic technical innovator with a proven track record in AI, GIS, Computer Vision and Cybersecurity. 
-                        I design and deliver high-impact, performance-focused solutions to complex industry challenges, applying deep 
-                        expertise in Python, AI and advanced image analytics. Recognized for leading mission-critical initiatives, 
-                        resolving high-stakes client issues, and driving projects to successful completion with a research-driven 
-                        and hands-on approach—bridging technical precision with business goals to create innovation that scales, 
-                        endures, and sets new standards.
-                    </p>
-
-                    <!-- Action Buttons -->
-                    <div class="flex flex-wrap justify-center lg:justify-start gap-4">
-                        <a href="mailto:surjith.kumar.jk@gmail.com" 
-                           class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-500 hover:to-indigo-600 rounded-xl font-semibold text-sm transition-all shadow-xl shadow-indigo-900/30">
-                            <i class="fas fa-envelope"></i>
-                            <span>Contact Me</span>
-                        </a>
-                        <a href="https://linkedin.com/in/surjithkumarjk" target="_blank" 
-                           class="inline-flex items-center gap-2 px-6 py-3 bg-gray-900/80 hover:bg-gray-800 rounded-xl font-semibold text-sm transition-all border border-gray-800">
-                            <i class="fab fa-linkedin"></i>
-                            <span>LinkedIn Profile</span>
-                            <i class="fas fa-external-link-alt text-xs"></i>
-                        </a>
-                        <a href="#" target="_blank" 
-                           class="inline-flex items-center gap-2 px-6 py-3 bg-gray-900/50 hover:bg-gray-800 rounded-xl font-semibold text-sm transition-all border border-gray-800">
-                            <i class="fas fa-graduation-cap"></i>
-                            <span>ORCID iD</span>
-                        </a>
-                    </div>
-                    
-                    <!-- Location -->
-                    <div class="mt-8 flex items-center justify-center lg:justify-start gap-2 text-gray-500 text-sm">
-                        <i class="fas fa-map-marker-alt text-indigo-400"></i>
-                        <span>India • Available for Global Opportunities</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Expertise Section -->
-    <section id="expertise">
-        <div class="container-custom">
-            <div class="text-center mb-12">
-                <span class="mono text-xs text-indigo-400 tracking-wider bg-indigo-950/30 px-3 py-1 rounded-full">TECHNICAL ARSENAL</span>
-                <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-3">Core Competencies</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">Specialized across AI infrastructure, geospatial intelligence, and security frameworks</p>
-            </div>
-            
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                <div class="glass rounded-xl p-4 text-center card-hover transition-all">
-                    <i class="fab fa-python text-3xl text-indigo-400 mb-2"></i>
-                    <p class="font-semibold text-sm">Python</p>
-                    <p class="text-xs text-gray-500 mono">Core Engine</p>
-                </div>
-                <div class="glass rounded-xl p-4 text-center card-hover transition-all">
-                    <i class="fas fa-brain text-3xl text-purple-400 mb-2"></i>
-                    <p class="font-semibold text-sm">AI / Machine Learning</p>
-                    <p class="text-xs text-gray-500 mono">TensorFlow • PyTorch</p>
-                </div>
-                <div class="glass rounded-xl p-4 text-center card-hover transition-all">
-                    <i class="fas fa-eye text-3xl text-blue-400 mb-2"></i>
-                    <p class="font-semibold text-sm">Computer Vision</p>
-                    <p class="text-xs text-gray-500 mono">OpenCV • YOLO</p>
-                </div>
-                <div class="glass rounded-xl p-4 text-center card-hover transition-all">
-                    <i class="fas fa-map text-3xl text-emerald-400 mb-2"></i>
-                    <p class="font-semibold text-sm">GIS & GPS</p>
-                    <p class="text-xs text-gray-500 mono">QGIS • PostGIS</p>
-                </div>
-                <div class="glass rounded-xl p-4 text-center card-hover transition-all">
-                    <i class="fas fa-shield-alt text-3xl text-emerald-400 mb-2"></i>
-                    <p class="font-semibold text-sm">Cybersecurity</p>
-                    <p class="text-xs text-gray-500 mono">ISC² • Threat Intel</p>
-                </div>
-                <div class="glass rounded-xl p-4 text-center card-hover transition-all">
-                    <i class="fas fa-microchip text-3xl text-gray-300 mb-2"></i>
-                    <p class="font-semibold text-sm">RF & Telematics</p>
-                    <p class="text-xs text-gray-500 mono">Signal Processing</p>
-                </div>
-                <div class="glass rounded-xl p-4 text-center card-hover transition-all">
-                    <i class="fas fa-car text-3xl text-gray-300 mb-2"></i>
-                    <p class="font-semibold text-sm">ADAS</p>
-                    <p class="text-xs text-gray-500 mono">Autonomous Systems</p>
-                </div>
-                <div class="glass rounded-xl p-4 text-center card-hover transition-all">
-                    <i class="fas fa-database text-3xl text-gray-300 mb-2"></i>
-                    <p class="font-semibold text-sm">Cloud & Edge</p>
-                    <p class="text-xs text-gray-500 mono">AWS • Docker</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Domain Integration Section -->
-    <section id="domains">
-        <div class="container-custom">
-            <div class="text-center mb-12">
-                <span class="mono text-xs text-indigo-400 tracking-wider bg-indigo-950/30 px-3 py-1 rounded-full">CONVERGENCE ZONE</span>
-                <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-3">Where Domains Collide</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">AI + Cybersecurity + GIS — The trifecta of modern engineering</p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="glass rounded-xl p-6 card-hover">
-                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500/20 to-indigo-600/20 flex items-center justify-center mb-4">
-                        <i class="fas fa-robot text-indigo-400 text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">AI-Powered Security</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Leveraging machine learning for threat detection, anomaly identification, and intelligent defense systems.</p>
-                    <div class="mt-4 flex flex-wrap gap-2">
-                        <span class="skill-badge px-2 py-1 rounded-md text-xs">Threat Intel</span>
-                        <span class="skill-badge px-2 py-1 rounded-md text-xs">Anomaly Detection</span>
-                    </div>
-                </div>
-                
-                <div class="glass rounded-xl p-6 card-hover">
-                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500/20 to-emerald-600/20 flex items-center justify-center mb-4">
-                        <i class="fas fa-globe-asia text-emerald-400 text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Geospatial AI</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Integrating computer vision with GIS for satellite imagery analysis, route optimization, and spatial intelligence.</p>
-                    <div class="mt-4 flex flex-wrap gap-2">
-                        <span class="skill-badge px-2 py-1 rounded-md text-xs">Satellite Analytics</span>
-                        <span class="skill-badge px-2 py-1 rounded-md text-xs">Route Optimization</span>
-                    </div>
-                </div>
-                
-                <div class="glass rounded-xl p-6 card-hover">
-                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/20 to-purple-600/20 flex items-center justify-center mb-4">
-                        <i class="fas fa-lock text-purple-400 text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Secure Infrastructure</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Building resilient systems with embedded security, from code to deployment, ensuring data integrity and compliance.</p>
-                    <div class="mt-4 flex flex-wrap gap-2">
-                        <span class="skill-badge px-2 py-1 rounded-md text-xs">Zero Trust</span>
-                        <span class="skill-badge px-2 py-1 rounded-md text-xs">Secure Code</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Highlights -->
-    <section>
-        <div class="container-custom">
-            <div class="glass rounded-2xl p-8 md:p-10">
-                <div class="flex flex-col md:flex-row gap-8 items-center justify-between">
-                    <div class="text-center md:text-left">
-                        <div class="inline-block px-3 py-1 rounded-full bg-emerald-950/30 border border-emerald-500/20 mb-4">
-                            <span class="mono text-xs text-emerald-400">✦ PRODUCTION EXPERIENCE ✦</span>
+                    <!-- Stats Grid -->
+                    <div class="grid grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-10">
+                        <div>
+                            <div class="stat-number">8+</div>
+                            <div class="text-[10px] md:text-xs text-gray-500 font-mono mt-1">PRODUCTION PROJECTS</div>
                         </div>
-                        <div class="text-4xl font-bold mb-2">8+ <span class="text-gray-500 text-lg font-normal">Client Projects</span></div>
-                        <div class="text-4xl font-bold mb-2">3+ <span class="text-gray-500 text-lg font-normal">Years Industry</span></div>
-                        <div class="text-4xl font-bold">3 <span class="text-gray-500 text-lg font-normal">Successful POCs</span></div>
+                        <div>
+                            <div class="stat-number">3+</div>
+                            <div class="text-[10px] md:text-xs text-gray-500 font-mono mt-1">YEARS INDUSTRY</div>
+                        </div>
+                        <div>
+                            <div class="stat-number">4</div>
+                            <div class="text-[10px] md:text-xs text-gray-500 font-mono mt-1">TECH DOMAINS</div>
+                        </div>
                     </div>
-                    <div class="h-16 w-px bg-gradient-to-b from-transparent via-gray-700 to-transparent hidden md:block"></div>
-                    <div class="max-w-md text-center md:text-left">
-                        <p class="text-gray-400 text-sm leading-relaxed">Each project represents real-world impact—from computer vision pipelines to secure GIS infrastructure. All documentation maintained under NDA guidelines with comprehensive case studies available for qualified inquiries.</p>
-                    </div>
-                    <div>
-                        <a href="#contact" class="inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 font-semibold text-sm transition">
-                            <span>Discuss Case Studies</span>
-                            <i class="fas fa-arrow-right text-xs"></i>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-wrap gap-3 md:gap-4">
+                        <a href="#case-studies" class="btn-primary">
+                            <i class="fas fa-folder-open"></i>
+                            <span>View Case Studies</span>
+                        </a>
+                        <a href="#contact" class="btn-outline">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>Contact Direct</span>
                         </a>
                     </div>
+                    
+                    <!-- Trust Indicators -->
+                    <div class="flex flex-wrap gap-3 md:gap-4 mt-6 md:mt-8 pt-4 md:pt-6 border-t border-gray-800/50">
+                        <div class="flex items-center gap-1.5 md:gap-2 text-[10px] md:text-xs text-gray-500">
+                            <i class="fas fa-check-circle text-emerald-500 text-[10px] md:text-xs"></i>
+                            <span>NDA-Compliant Documentation</span>
+                        </div>
+                        <div class="flex items-center gap-1.5 md:gap-2 text-[10px] md:text-xs text-gray-500">
+                            <i class="fas fa-shield-alt text-indigo-400 text-[10px] md:text-xs"></i>
+                            <span>ISC² Candidate</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Column: Profile Card -->
+                <div class="relative flex justify-center">
+                    <div class="relative group">
+                        <div class="absolute -inset-2 md:-inset-3 bg-gradient-to-r from-indigo-600 via-purple-600 to-emerald-600 rounded-2xl md:rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition duration-700"></div>
+                        
+                        <div class="relative glass-card p-4 md:p-6">
+                            <div class="profile-image mx-auto mb-4 md:mb-5 overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900">
+                                <img src="SurjithKumar-JK.jpg" alt="Surjith Kumar JK" class="w-full h-full object-cover">
+                            </div>
+                            
+                            <div class="text-center mb-3 md:mb-4">
+                                <h3 class="text-base md:text-xl font-bold">Surjith Kumar JK</h3>
+                                <p class="text-xs md:text-sm text-indigo-400">AI/ML & Computer Vision Engineer</p>
+                            </div>
+                            
+                            <div class="flex flex-wrap gap-1.5 md:gap-2 justify-center">
+                                <span class="px-1.5 md:px-2.5 py-1 rounded-lg bg-gray-900/60 border border-gray-700 text-[10px] md:text-xs font-mono text-indigo-300">Python</span>
+                                <span class="px-1.5 md:px-2.5 py-1 rounded-lg bg-gray-900/60 border border-gray-700 text-[10px] md:text-xs font-mono text-indigo-300">TensorFlow</span>
+                                <span class="px-1.5 md:px-2.5 py-1 rounded-lg bg-gray-900/60 border border-gray-700 text-[10px] md:text-xs font-mono text-indigo-300">OpenCV</span>
+                                <span class="px-1.5 md:px-2.5 py-1 rounded-lg bg-gray-900/60 border border-gray-700 text-[10px] md:text-xs font-mono text-emerald-300">PyTorch</span>
+                                <span class="px-1.5 md:px-2.5 py-1 rounded-lg bg-gray-900/60 border border-gray-700 text-[10px] md:text-xs font-mono text-indigo-300">QGIS</span>
+                                <span class="px-1.5 md:px-2.5 py-1 rounded-lg bg-gray-900/60 border border-gray-700 text-[10px] md:text-xs font-mono text-emerald-300">PostGIS</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating Icons -->
+                        <div class="absolute -top-2 -right-2 md:-top-4 md:-right-4 w-7 h-7 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-indigo-950/60 border border-indigo-500/30 flex items-center justify-center backdrop-blur-sm animate-pulse">
+                            <i class="fas fa-brain text-indigo-400 text-sm md:text-lg"></i>
+                        </div>
+                        <div class="absolute -bottom-2 -left-2 md:-bottom-4 md:-left-4 w-7 h-7 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-emerald-950/60 border border-emerald-500/30 flex items-center justify-center backdrop-blur-sm">
+                            <i class="fas fa-shield-haltered text-emerald-400 text-sm md:text-lg"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container-custom">
-            <div class="text-center mb-12">
-                <span class="mono text-xs text-indigo-400 tracking-wider bg-indigo-950/30 px-3 py-1 rounded-full">CONNECT & COLLABORATE</span>
-                <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-3">Let's Build Something</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">Ready to discuss AI infrastructure, security architecture, or geospatial innovation? Reach out.</p>
+    <!-- About / Bio Section -->
+    <section style="padding-top: 0;">
+        <div class="section-container">
+            <div class="glass-card p-6 md:p-10 max-w-4xl mx-auto">
+                <div class="text-center mb-4 md:mb-6">
+                    <span class="section-tag">✦ The Vision ✦</span>
+                </div>
+                <p class="text-gray-300 leading-relaxed text-center text-body">
+                    A strategic technical innovator with a proven track record in <span class="text-indigo-400">AI, GIS, Computer Vision and Cybersecurity</span>. 
+                    I design and deliver high-impact, performance-focused solutions to complex industry challenges, applying deep expertise 
+                    in Python, AI and advanced image analytics. Recognized for leading mission-critical initiatives, resolving high-stakes 
+                    client issues, and driving projects to successful completion with a research-driven and hands-on approach—bridging 
+                    technical precision with business goals to create innovation that scales, endures, and sets new standards.
+                </p>
+                <div class="mt-4 md:mt-6 flex flex-wrap justify-center gap-3 md:gap-4 text-xs md:text-sm text-gray-500">
+                    <span><i class="fas fa-map-marker-alt text-indigo-400 mr-1"></i> India</span>
+                    <span><i class="fas fa-globe text-emerald-400 mr-1"></i> Global Remote</span>
+                    <span><i class="fas fa-clock text-indigo-400 mr-1"></i> UTC+5:30</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section (7 Projects) -->
+    <section id="case-studies">
+        <div class="section-container">
+            <div class="text-center mb-8 md:mb-12">
+                <span class="section-tag">✦ CASE STUDIES ✦</span>
+                <h2 class="mb-3 md:mb-4">Production <span class="gradient-primary">Projects</span></h2>
+                <p class="text-gray-400 text-body max-w-2xl mx-auto">7 enterprise projects delivered under NDA. Detailed case studies available for qualified inquiries.</p>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-                <div class="glass rounded-xl p-6 text-center card-hover">
-                    <div class="w-14 h-14 rounded-full bg-indigo-950/30 flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-envelope text-indigo-400 text-xl"></i>
+            <div class="grid-3">
+                
+                <!-- Case Study 1 -->
+                <div class="glass-card">
+                    <div class="h-1 md:h-2 w-20 md:w-24 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full mb-4"></div>
+                    <div class="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
+                        <div class="w-7 h-7 md:w-9 md:h-9 rounded-lg bg-indigo-950/40 flex items-center justify-center">
+                            <i class="fas fa-eye text-indigo-400 text-sm md:text-base"></i>
+                        </div>
+                        <span class="text-[10px] md:text-xs text-indigo-400 font-mono">COMPUTER VISION</span>
                     </div>
-                    <h3 class="font-semibold mb-2">Email Direct</h3>
-                    <a href="mailto:surjith.kumar.jk@gmail.com" class="text-sm text-indigo-400 hover:text-indigo-300 break-all">surjith.kumar.jk@gmail.com</a>
+                    <h3 class="text-base md:text-lg font-bold mb-2">Real-Time Object Detection</h3>
+                    <p class="text-gray-400 text-xs md:text-sm mb-3 md:mb-4">94.2% mAP at 23ms inference for autonomous perception.</p>
+                    <div class="flex flex-wrap gap-1.5 md:gap-2 mb-3 md:mb-4">
+                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">YOLOv8</span>
+                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">TensorRT</span>
+                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">AWS</span>
+                    </div>
+                    <a href="#" class="text-indigo-400 hover:text-indigo-300 text-xs md:text-sm font-medium inline-flex items-center gap-1">View Case Study →</a>
                 </div>
                 
-                <div class="glass rounded-xl p-6 text-center card-hover">
-                    <div class="w-14 h-14 rounded-full bg-indigo-950/30 flex items-center justify-center mx-auto mb-4">
-                        <i class="fab fa-linkedin text-indigo-400 text-xl"></i>
+                <!-- Case Study 2 -->
+                <div class="glass-card">
+                    <div class="h-1 md:h-2 w-20 md:w-24 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full mb-4"></div>
+                    <div class="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
+                        <div class="w-7 h-7 md:w-9 md:h-9 rounded-lg bg-emerald-950/40 flex items-center justify-center">
+                            <i class="fas fa-shield-virus text-emerald-400 text-sm md:text-base"></i>
+                        </div>
+                        <span class="text-[10px] md:text-xs text-emerald-400 font-mono">CYBERSECURITY</span>
                     </div>
-                    <h3 class="font-semibold mb-2">LinkedIn</h3>
-                    <a href="https://linkedin.com/in/surjithkumarjk" target="_blank" class="text-sm text-indigo-400 hover:text-indigo-300">Connect Professionally →</a>
+                    <h3 class="text-base md:text-lg font-bold mb-2">Network Intrusion Detection</h3>
+                    <p class="text-gray-400 text-xs md:text-sm mb-3 md:mb-4">99.1% accuracy, &lt;1% FPR for enterprise networks.</p>
+                    <div class="flex flex-wrap gap-1.5 md:gap-2 mb-3 md:mb-4">
+                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">TensorFlow</span>
+                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">Scapy</span>
+                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">Kafka</span>
+                    </div>
+                    <a href="#" class="text-indigo-400 hover:text-indigo-300 text-xs md:text-sm font-medium inline-flex items-center gap-1">View Case Study →</a>
                 </div>
                 
-                <div class="glass rounded-xl p-6 text-center card-hover">
-                    <div class="w-14 h-14 rounded-full bg-indigo-950/30 flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-id-card text-indigo-400 text-xl"></i>
+                <!-- Case Study 3 -->
+                <div class="glass-card">
+                    <div class="h-1 md:h-2 w-20 md:w-24 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-4"></div>
+                    <div class="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
+                        <div class="w-7 h-7 md:w-9 md:h-9 rounded-lg bg-purple-950/40 flex items-center justify-center">
+                            <i class="fas fa-map-marked-alt text-purple-400 text-sm md:text-base"></i>
+                        </div>
+                        <span class="text-[10px] md:text-xs text-purple-400 font-mono">GIS / GPS</span>
                     </div>
-                    <h3 class="font-semibold mb-2">ORCID iD</h3>
-                    <a href="#" target="_blank" class="text-sm text-indigo-400 hover:text-indigo-300">View Research Profile →</a>
+                    <h3 class="text-base md:text-lg font-bold mb-2">GPS Fleet Optimizer</h3>
+                    <p class="text-gray-400 text-xs md:text-sm mb-3 md:mb-4">23% time reduction, 15% fuel savings for logistics.</p>
+                    <div class="flex flex-wrap gap-1.5 md:gap-2 mb-3 md:mb-4">
+                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">PostGIS</span>
+                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">OR-Tools</span>
+                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">Leaflet</span>
+                    </div>
+                    <a href="#" class="text-indigo-400 hover:text-indigo-300 text-xs md:text-sm font-medium inline-flex items-center gap-1">View Case Study →</a>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="border-t border-gray-900 mt-20 py-8">
-        <div class="container-custom">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-600 mono">
-                <p>© 2026 Surjith Kumar JK — All Rights Reserved</p>
-                <div class="flex gap-6">
-                    <span>🔒 PGP Available</span>
-                    <span>🌍 Global Remote</span>
-                    <span>⚡ ISC² Candidate</span>
+                
+                <!-- Case Study 4 -->
+                <div class="glass-card">
+                    <div class="h-1 md:h-2 w-20 md:w-24 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full mb-4"></div>
+                    <div class="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
+                        <div class="w-7 h-7 md:w-9 md:h-9 rounded-lg bg-blue-950/40 flex items-center justify-center">
+                            <i class="fas fa-satellite text-blue-400 text-sm md:text-base"></i>
+                        </div>
+                        <span class="text-[10px] md:text-xs text-blue-400 font-mono">GIS + CV</span>
+                    </div>
+                    <h3 class="text-base md:text-lg font-bold mb-2">Satellite Image Analysis</h3>
+                    <p class="text-gray-400 text-xs md:text-sm mb-3 md:mb-4">87% land cover classification across multispectral data.</p>
+                    <div class="flex flex-wrap gap-1.5 md:gap-2 mb-3 md:mb-4">
+                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">PyTorch</span>
+                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">GDAL</span>
+                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">QGIS</span>
+                    </div>
+                    <a href="#" class="text-indigo-400 hover:text-indigo-300 text-xs md:text-sm font-medium inline-flex items-center gap-1">View Case Study →</a>
                 </div>
-            </div>
-        </div>
-    </footer>
-
-</body>
-</html>
+                
+                <!-- Case Study 5 -->
+                <div class="glass-card">
+                    <div class="h-1 md:h-2 w-20 md:w-24 bg-gradient-to-r from-rose-500 to-red-500 rounded-full mb-4"></div>
+                    <div class="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
+                        <div class="w-7 h-7 md:w-9 md:h-9 rounded-lg bg-rose-950/40 flex items-center justify-center">
+                            <i class="fas fa-user-secret text-rose-400 text-sm md:text-base"></i>
+                        </div>
+                        <span class="text-[10px] md:text-xs text-rose-400 font-mono">CV + SECURITY</span>
+                    </div>
+                    <h3 class="text-base md:text-lg font-bold mb-2">Facial Recognition System</h3>
+                    <p class="text-gray-400 text-xs md:text-sm mb-3 md:mb-4">&lt;0.1% false accept rate, real-time matching.</p>
+                    <div class="flex flex-wrap gap-1.5 md:gap-2 mb-3 md:mb-4">
+                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">FaceNet</span>
+                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">OpenCV</span>
+                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">Docker</span>
+                    </div>
+                    <a href="#" class="text-indigo-400 hover:text-indigo-300 text-xs md:text-sm font-medium inline-flex items-center gap-1">View Case Study →</a>
+                </div>
+                
+                <!-- Case Study 6 -->
+                <div class="glass-card">
+                    <div class="h-1 md:h-2 w-20 md:w-24 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full mb-4"></div>
+                    <div class="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
+                        <div class="w-7 h-7 md:w-9 md:h-9 rounded-lg bg-amber-950/40 flex items-center justify-center">
+                            <i class="fas fa-water text-amber-400 text-sm md:text-base"></i>
+                        </div>
+                        <span class="text-[10px] md:text-xs text-amber-400 font-mono">GIS + AI</span>
+                    </div>
+                    <h3 class="text-base md:text-lg font-bold mb-2">Flood Risk Mapping</h3>
+                    <p class="text-gray-400 text-xs md:text-sm mb-3 md:mb-4">Real-time flood prediction with 15-minute lead time.</p>
+                    <div class="flex flex-wrap gap-1.5 md:gap-2 mb-3 md:mb-4">
+                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">XGBoost</span>
+                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">PostGIS</span>
+                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">FastAPI</span>
+                    </div>
+                    <a href="#" class="text-indigo-400 hover:text-indigo-300 text-xs md:text-sm font-medium inline-flex items-center gap-1">View Case Study →</a>
+                </div>
+                
+                <!-- Case Study 7 -->
+                <div class="glass-card">
+                    <div class="h-1 md:h-2 w-20 md:w-24 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full mb-4"></div>
+                    <div class="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
+                        <div class="w-7 h-7 md:w-9 md:h-9 rounded-lg bg-indigo-950/40 flex items-center justify-center">
+                            <i class="fas fa-microchip text-indigo-400 text-sm md:text-base"></i>
+                        </div>
+                        <span class="text-[10px] md:text-xs text-indigo-400 font-mono">ADAS + CV</span>
+                    </div>
+                    <h3 class="text-base md:text-lg font-bold mb-2">Drone Path Planning</h3>
+                    <p class="text-gray-400 text-xs md:text-sm mb-3 md:mb-4">98% autonomous navigation success in urban environments.</p>
+                    <div class="flex flex-wrap gap-1.5 md:gap-2 mb-3 md:mb-4">
+                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">A* Algorithm</span>
+                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-gray-800/50">OpenCV</span>
+                        <span class="text-[9px] md:text-xs px-1.5 md:px-2 py-
