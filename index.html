@@ -40,7 +40,7 @@
             z-index: 2;
         }
 
-        /* ========== NAVIGATION BAR ========== */
+        /* ========== NAVIGATION BAR (Unified across all pages) ========== */
         .navbar {
             background: rgba(10, 10, 15, 0.85);
             backdrop-filter: blur(16px);
@@ -106,7 +106,7 @@
             font-weight: 500;
         }
 
-        /* Navigation Links - PERFECT ALIGNMENT */
+        /* Navigation Links */
         .nav-links {
             display: flex;
             gap: 32px;
@@ -169,54 +169,7 @@
             cursor: pointer;
         }
 
-        /* ========== HERO SECTION ========== */
-        .hero {
-            display: grid;
-            grid-template-columns: 1fr 0.8fr;
-            gap: 60px;
-            align-items: center;
-            padding: 80px 0;
-        }
-
-        .availability {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(59, 130, 246, 0.08);
-            border: 1px solid rgba(59, 130, 246, 0.15);
-            border-radius: 40px;
-            padding: 5px 16px;
-            margin-bottom: 28px;
-        }
-
-        .live-dot {
-            width: 8px;
-            height: 8px;
-            background: #10B981;
-            border-radius: 50%;
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.2); }
-        }
-
-        .availability span {
-            font-size: 11px;
-            font-family: monospace;
-            color: #60A5FA;
-            letter-spacing: 1px;
-        }
-
-        h1 {
-            font-size: 52px;
-            font-weight: 800;
-            font-family: 'Syne', sans-serif;
-            line-height: 1.15;
-            margin-bottom: 24px;
-        }
-
+        /* Common Styles for All Pages */
         .gradient-text {
             background: linear-gradient(135deg, #60A5FA, #A78BFA, #34D399);
             -webkit-background-clip: text;
@@ -224,182 +177,21 @@
             color: transparent;
         }
 
-        .description {
-            color: #9CA3AF;
-            font-size: 15px;
-            line-height: 1.6;
-            margin-bottom: 32px;
-        }
-
-        .stats {
-            display: flex;
-            gap: 48px;
-            margin-bottom: 36px;
-        }
-
-        .stat-value {
-            font-size: 28px;
+        .page-title {
+            font-size: 48px;
             font-weight: 800;
             font-family: 'Syne', sans-serif;
-            background: linear-gradient(135deg, #FFFFFF, #A78BFA);
+            text-align: center;
+            margin: 60px 0 40px;
+        }
+
+        .page-title span {
+            background: linear-gradient(135deg, #60A5FA, #A78BFA, #34D399);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
 
-        .stat-label {
-            font-size: 10px;
-            font-family: monospace;
-            color: #6B7280;
-            letter-spacing: 0.5px;
-            margin-top: 5px;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 16px;
-            margin-bottom: 32px;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            background: linear-gradient(105deg, #1E293B, #0F172A);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            padding: 12px 28px;
-            border-radius: 40px;
-            color: white;
-            font-size: 13px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.2s;
-            cursor: pointer;
-        }
-
-        .btn-primary:hover {
-            border-color: #3B82F6;
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 12px 28px;
-            border-radius: 40px;
-            color: white;
-            font-size: 13px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.2s;
-            cursor: pointer;
-        }
-
-        .btn-outline:hover {
-            border-color: rgba(59, 130, 246, 0.5);
-            background: rgba(59, 130, 246, 0.05);
-            transform: translateY(-2px);
-        }
-
-        .trust {
-            display: flex;
-            gap: 28px;
-            flex-wrap: wrap;
-        }
-
-        .trust-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 11px;
-            color: #6B7280;
-        }
-
-        /* Profile Card */
-        .profile-card {
-            background: rgba(20, 24, 35, 0.5);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 28px;
-            padding: 32px;
-            position: relative;
-        }
-
-        .profile-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 20px;
-            overflow: hidden;
-            margin: 0 auto 20px;
-        }
-
-        .profile-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .profile-name {
-            text-align: center;
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 6px;
-        }
-
-        .profile-title {
-            text-align: center;
-            font-size: 13px;
-            color: #60A5FA;
-            margin-bottom: 18px;
-        }
-
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        .tech-item {
-            font-size: 10px;
-            font-family: monospace;
-            padding: 5px 12px;
-            background: rgba(30, 41, 59, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            color: #94A3B8;
-        }
-
-        .floating-icon {
-            position: absolute;
-            width: 38px;
-            height: 38px;
-            background: rgba(59, 130, 246, 0.15);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            backdrop-filter: blur(8px);
-        }
-
-        .floating-1 {
-            top: -12px;
-            right: -12px;
-        }
-
-        .floating-2 {
-            bottom: -12px;
-            left: -12px;
-            background: rgba(16, 185, 129, 0.15);
-            border-color: rgba(16, 185, 129, 0.3);
-        }
-
-        /* Footer */
         .footer {
             border-top: 1px solid rgba(255, 255, 255, 0.04);
             padding: 24px 0;
@@ -425,10 +217,7 @@
         }
 
         @media (max-width: 768px) {
-            .container {
-                padding: 0 20px;
-            }
-            .nav-container {
+            .container, .nav-container {
                 padding: 0 20px;
             }
             .nav-links {
@@ -450,7 +239,7 @@
             .mobile-menu-btn {
                 display: block;
             }
-            h1 {
+            h1, .page-title {
                 font-size: 36px;
             }
             .stats {
@@ -473,7 +262,7 @@
 
 <div class="bg-gradient"></div>
 
-<!-- Navigation Bar -->
+<!-- Navigation Bar - Consistent Across All Pages -->
 <div class="navbar">
     <div class="nav-container">
         <div class="nav-content">
@@ -488,7 +277,7 @@
                 </div>
             </div>
 
-            <!-- Navigation Links - ALL VERIFIED WORKING LINKS -->
+            <!-- Navigation Links -->
             <div class="nav-links" id="navLinks">
                 <a href="Index.html" class="active">Home</a>
                 <a href="Profile.html">Profile</a>
