@@ -10,68 +10,141 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background: #0A0A0F; color: #EAEAEF; }
 
-        .bg-gradient { position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+        .bg-gradient { 
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
             background: radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.06) 0%, transparent 50%),
                         radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.04) 0%, transparent 50%);
-            z-index: 0; pointer-events: none; }
+            z-index: 0; pointer-events: none; 
+        }
 
-        .container { max-width: 1280px; margin: 0 auto; padding: 0 40px; position: relative; z-index: 2; }
+        .container { 
+            max-width: 1280px; margin: 0 auto; padding: 0 40px; 
+            position: relative; z-index: 2; 
+        }
 
         /* Unified Navbar */
-        .navbar { background: rgba(10, 10, 15, 0.85); backdrop-filter: blur(16px); 
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05); position: sticky; top: 0; z-index: 1000; width: 100%; }
+        .navbar { 
+            background: rgba(10, 10, 15, 0.85); backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+            position: sticky; top: 0; z-index: 1000; width: 100%; 
+        }
         .nav-container { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
-        .nav-content { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; gap: 20px; flex-wrap: wrap; }
+        .nav-content { 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 16px 0; gap: 20px; flex-wrap: wrap; 
+        }
 
         .logo-section { display: flex; align-items: center; gap: 12px; }
-        .logo-box { width: 42px; height: 42px; background: linear-gradient(135deg, #3B82F6, #10B981); border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+        .logo-box { 
+            width: 42px; height: 42px; background: linear-gradient(135deg, #3B82F6, #10B981);
+            border-radius: 12px; display: flex; align-items: center; justify-content: center; 
+        }
         .logo-box span { font-weight: 800; font-size: 18px; color: white; font-family: 'Syne', sans-serif; }
-        .logo-text { font-size: 20px; font-weight: 700; font-family: 'Syne', sans-serif; letter-spacing: -0.3px; }
+        .logo-text { 
+            font-size: 20px; font-weight: 700; font-family: 'Syne', sans-serif; 
+            letter-spacing: -0.3px; 
+        }
         .logo-text .first-name { color: #EAEAEF; }
         .logo-text .last-name { color: #94A3B8; font-weight: 500; }
 
         .nav-links { display: flex; gap: 32px; align-items: center; }
-        .nav-links a { color: #9CA3AF; text-decoration: none; font-size: 14px; font-weight: 500; transition: all 0.2s ease; padding: 8px 0; position: relative; }
+        .nav-links a { 
+            color: #9CA3AF; text-decoration: none; font-size: 14px; font-weight: 500;
+            transition: all 0.2s ease; padding: 8px 0; position: relative; 
+        }
         .nav-links a:hover { color: #60A5FA; }
         .nav-links a.active { color: #60A5FA; }
-        .nav-links a.active::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 2px; background: linear-gradient(90deg, #60A5FA, #A78BFA); border-radius: 2px; }
+        .nav-links a.active::after { 
+            content: ''; position: absolute; bottom: -2px; left: 0;
+            width: 100%; height: 2px; background: linear-gradient(90deg, #60A5FA, #A78BFA); 
+            border-radius: 2px; 
+        }
 
         .nav-right { display: flex; align-items: center; gap: 20px; }
-        .isc2-badge { font-size: 11px; font-family: monospace; color: #34D399; background: rgba(16, 185, 129, 0.12); padding: 6px 16px; border-radius: 40px; border: 1px solid rgba(16, 185, 129, 0.25); letter-spacing: 0.5px; }
-        .mobile-menu-btn { display: none; background: none; border: none; color: #9CA3AF; font-size: 24px; cursor: pointer; }
+        .isc2-badge { 
+            font-size: 11px; font-family: monospace; color: #34D399; 
+            background: rgba(16, 185, 129, 0.12); padding: 6px 16px; 
+            border-radius: 40px; border: 1px solid rgba(16, 185, 129, 0.25); 
+            letter-spacing: 0.5px; 
+        }
+        .mobile-menu-btn { 
+            display: none; background: none; border: none; 
+            color: #9CA3AF; font-size: 24px; cursor: pointer; 
+        }
 
-        .gradient-text { background: linear-gradient(135deg, #60A5FA, #A78BFA, #34D399); -webkit-background-clip: text; background-clip: text; color: transparent; }
-        .page-title { font-size: 48px; font-weight: 800; font-family: 'Syne', sans-serif; text-align: center; margin: 60px 0 40px; }
+        .gradient-text { 
+            background: linear-gradient(135deg, #60A5FA, #A78BFA, #34D399); 
+            -webkit-background-clip: text; background-clip: text; color: transparent; 
+        }
+        .page-title { 
+            font-size: 48px; font-weight: 800; font-family: 'Syne', sans-serif; 
+            text-align: center; margin: 60px 0 40px; 
+        }
 
-        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 900px; margin: 0 auto 50px; }
-        .contact-card { background: rgba(20, 24, 35, 0.5); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 20px; padding: 40px 30px; text-align: center; transition: all 0.3s; }
+        .contact-grid { 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 30px; max-width: 900px; margin: 0 auto 50px; 
+        }
+        .contact-card { 
+            background: rgba(20, 24, 35, 0.5); border: 1px solid rgba(255, 255, 255, 0.06); 
+            border-radius: 20px; padding: 40px 30px; text-align: center; 
+            transition: all 0.3s; 
+        }
         .contact-card:hover { transform: translateY(-5px); border-color: rgba(59, 130, 246, 0.3); }
-        /* ... other contact styles preserved ... */
+        .contact-icon { 
+            width: 80px; height: 80px; background: rgba(59, 130, 246, 0.1); 
+            border-radius: 50%; display: flex; align-items: center; 
+            justify-content: center; font-size: 32px; margin: 0 auto 20px; 
+        }
+        .contact-card h3 { font-size: 22px; font-weight: 600; margin-bottom: 12px; }
+        .contact-card p, .contact-card a { 
+            font-size: 14px; color: #9CA3AF; text-decoration: none; 
+        }
+        .contact-card a:hover { color: #60A5FA; }
 
-        .footer { border-top: 1px solid rgba(255, 255, 255, 0.04); padding: 24px 0; text-align: center; margin-top: 60px; }
+        .availability-card { 
+            background: rgba(20, 24, 35, 0.3); border-radius: 20px; 
+            padding: 40px; text-align: center; max-width: 700px; 
+            margin: 0 auto; border: 1px solid rgba(16, 185, 129, 0.2); 
+        }
+
+        .footer { 
+            border-top: 1px solid rgba(255, 255, 255, 0.04); padding: 24px 0; 
+            text-align: center; margin-top: 60px; 
+        }
         .footer-text { font-size: 10px; color: #4B5563; font-family: monospace; }
 
         @media (max-width: 768px) {
             .container, .nav-container { padding: 0 20px; }
-            .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(10, 10, 15, 0.98);
-                backdrop-filter: blur(20px); flex-direction: column; padding: 24px; gap: 20px; }
+            .nav-links { 
+                display: none; position: absolute; top: 100%; left: 0; right: 0; 
+                background: rgba(10, 10, 15, 0.98); backdrop-filter: blur(20px); 
+                flex-direction: column; padding: 24px; gap: 20px; 
+            }
             .nav-links.active { display: flex; }
             .mobile-menu-btn { display: block; }
             .page-title { font-size: 36px; }
         }
-        @media (min-width: 769px) { .nav-links { display: flex !important; } }
+        @media (min-width: 769px) { 
+            .nav-links { display: flex !important; } 
+        }
     </style>
 </head>
 <body>
 <div class="bg-gradient"></div>
 
+<!-- Fixed Navbar -->
 <div class="navbar">
     <div class="nav-container">
         <div class="nav-content">
             <div class="logo-section">
                 <div class="logo-box"><span>SK</span></div>
-                <div class="logo-text"><span class="first-name">Surjith</span><span class="last-name"> Kumar JK</span></div>
+                <div class="logo-text">
+                    <span class="first-name">Surjith</span>
+                    <span class="last-name"> Kumar JK</span>
+                </div>
             </div>
+            
             <div class="nav-links" id="navLinks">
                 <a href="index.html">Home</a>
                 <a href="Profile.html">Profile</a>
@@ -80,9 +153,12 @@
                 <a href="Expertise.html">Expertise</a>
                 <a href="Contact.html" class="active">Contact</a>
             </div>
+
             <div class="nav-right">
                 <div class="isc2-badge">ISC² Candidate</div>
-                <button class="mobile-menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+                <button class="mobile-menu-btn" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
     </div>
@@ -90,7 +166,41 @@
 
 <div class="container">
     <h1 class="page-title">Get In <span class="gradient-text">Touch</span></h1>
-    <!-- Contact grid and availability card preserved -->
+    
+    <div class="contact-grid">
+        <div class="contact-card">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <h3>Email</h3>
+            <a href="mailto:surjith.kumar.jk@gmail.com">surjith.kumar.jk@gmail.com</a>
+            <p style="margin-top: 12px; font-size: 12px;">Best for professional inquiries</p>
+        </div>
+        <div class="contact-card">
+            <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+            <h3>LinkedIn</h3>
+            <a href="https://linkedin.com/in/surjithkumarjk" target="_blank">linkedin.com/in/surjithkumarjk</a>
+            <p style="margin-top: 12px; font-size: 12px;">Connect for networking</p>
+        </div>
+        <div class="contact-card">
+            <div class="contact-icon"><i class="fab fa-github"></i></div>
+            <h3>GitHub</h3>
+            <a href="https://github.com/SurjithKumar-JK" target="_blank">github.com/SurjithKumar-JK</a>
+            <p style="margin-top: 12px; font-size: 12px;">View my code & projects</p>
+        </div>
+        <div class="contact-card">
+            <div class="contact-icon"><i class="fas fa-id-card"></i></div>
+            <h3>ORCID</h3>
+            <a href="#" target="_blank">orcid.org/0000-0001-XXXX-XXXX</a>
+            <p style="margin-top: 12px; font-size: 12px;">Research & publications</p>
+        </div>
+    </div>
+    
+    <div class="availability-card">
+        <h3>🌍 Available for Global Opportunities</h3>
+        <p>Open to full-time positions, freelance contracts, and technical collaborations in AI/ML, Computer Vision, GIS, and Cybersecurity domains.</p>
+        <div class="response-time" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(16, 185, 129, 0.1); padding: 10px 24px; border-radius: 40px; font-size: 13px; color: #34D399; margin-top: 15px;">
+            <i class="fas fa-clock"></i> Response within 24 hours
+        </div>
+    </div>
 </div>
 
 <div class="footer">
