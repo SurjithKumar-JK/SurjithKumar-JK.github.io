@@ -9,43 +9,66 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background: #0A0A0F; color: #EAEAEF; }
-        .bg-gradient { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.06) 0%, transparent 50%); z-index: 0; pointer-events: none; }
-        .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 2; }
-        
-        .nav { padding: 16px 0; background: rgba(10, 10, 15, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); position: sticky; top: 0; z-index: 100; }
-        .nav-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
-        .logo-area { display: flex; align-items: center; gap: 12px; }
-        .logo-box { width: 40px; height: 40px; background: linear-gradient(135deg, #3B82F6, #10B981); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+
+        .bg-gradient { position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            background: radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.06) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.04) 0%, transparent 50%);
+            z-index: 0; pointer-events: none; }
+
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 40px; position: relative; z-index: 2; }
+
+        /* Unified Navbar */
+        .navbar { background: rgba(10, 10, 15, 0.85); backdrop-filter: blur(16px); 
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05); position: sticky; top: 0; z-index: 1000; width: 100%; }
+        .nav-container { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; gap: 20px; flex-wrap: wrap; }
+
+        .logo-section { display: flex; align-items: center; gap: 12px; }
+        .logo-box { width: 42px; height: 42px; background: linear-gradient(135deg, #3B82F6, #10B981); 
+            border-radius: 12px; display: flex; align-items: center; justify-content: center; }
         .logo-box span { font-weight: 800; font-size: 18px; color: white; font-family: 'Syne', sans-serif; }
-        .logo-text { font-size: 20px; font-weight: 700; font-family: 'Syne', sans-serif; }
+        .logo-text { font-size: 20px; font-weight: 700; font-family: 'Syne', sans-serif; letter-spacing: -0.3px; }
         .logo-text .first-name { color: #EAEAEF; }
         .logo-text .last-name { color: #94A3B8; font-weight: 500; }
-        .nav-links { display: flex; gap: 28px; }
-        .nav-links a { color: #9CA3AF; text-decoration: none; font-size: 14px; font-weight: 500; padding: 8px 0; }
-        .nav-links a:hover, .nav-links a.active { color: #60A5FA; border-bottom: 2px solid #60A5FA; }
-        .isc2-badge { font-size: 11px; font-family: monospace; color: #34D399; background: rgba(16, 185, 129, 0.1); padding: 5px 14px; border-radius: 40px; border: 1px solid rgba(16, 185, 129, 0.2); }
-        .mobile-menu-btn { display: none; background: none; border: none; color: #9CA3AF; font-size: 22px; cursor: pointer; }
-        
+
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a { color: #9CA3AF; text-decoration: none; font-size: 14px; font-weight: 500; 
+            transition: all 0.2s ease; padding: 8px 0; position: relative; }
+        .nav-links a:hover { color: #60A5FA; }
+        .nav-links a.active { color: #60A5FA; }
+        .nav-links a.active::after { content: ''; position: absolute; bottom: -2px; left: 0; 
+            width: 100%; height: 2px; background: linear-gradient(90deg, #60A5FA, #A78BFA); border-radius: 2px; }
+
+        .nav-right { display: flex; align-items: center; gap: 20px; }
+        .isc2-badge { font-size: 11px; font-family: monospace; color: #34D399; background: rgba(16, 185, 129, 0.12);
+            padding: 6px 16px; border-radius: 40px; border: 1px solid rgba(16, 185, 129, 0.25); letter-spacing: 0.5px; }
+        .mobile-menu-btn { display: none; background: none; border: none; color: #9CA3AF; font-size: 24px; cursor: pointer; }
+
+        .gradient-text { background: linear-gradient(135deg, #60A5FA, #A78BFA, #34D399); -webkit-background-clip: text; background-clip: text; color: transparent; }
         .page-title { font-size: 48px; font-weight: 800; font-family: 'Syne', sans-serif; text-align: center; margin: 60px 0 40px; }
-        .page-title span { background: linear-gradient(135deg, #60A5FA, #A78BFA, #34D399); -webkit-background-clip: text; background-clip: text; color: transparent; }
-        
+
         .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 60px; }
-        .project-card { background: rgba(20, 24, 35, 0.5); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 20px; padding: 28px; transition: all 0.3s; }
+        .project-card { background: rgba(20, 24, 35, 0.5); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 20px; 
+            padding: 28px; transition: all 0.3s; }
         .project-card:hover { transform: translateY(-5px); border-color: rgba(59, 130, 246, 0.3); }
-        .project-icon { width: 55px; height: 55px; background: rgba(59, 130, 246, 0.1); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 20px; }
+        .project-icon { width: 55px; height: 55px; background: rgba(59, 130, 246, 0.1); border-radius: 14px; 
+            display: flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 20px; }
         .project-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
         .project-card p { font-size: 13px; color: #9CA3AF; margin-bottom: 16px; line-height: 1.5; }
         .project-tech { display: flex; flex-wrap: wrap; gap: 8px; }
-        .project-tech span { font-size: 10px; padding: 4px 12px; background: rgba(30, 41, 59, 0.5); border-radius: 20px; color: #94A3B8; }
-        
-        .footer { padding: 20px 0; border-top: 1px solid rgba(255, 255, 255, 0.04); text-align: center; margin-top: 60px; }
+        .project-tech span { font-size: 10px; padding: 4px 12px; background: rgba(30, 41, 59, 0.5); 
+            border-radius: 20px; color: #94A3B8; }
+
+        .footer { border-top: 1px solid rgba(255, 255, 255, 0.04); padding: 24px 0; text-align: center; margin-top: 60px; }
         .footer-text { font-size: 10px; color: #4B5563; font-family: monospace; }
-        
+
         @media (max-width: 768px) {
-            .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(10, 10, 15, 0.95); flex-direction: column; padding: 20px; gap: 16px; }
+            .container, .nav-container { padding: 0 20px; }
+            .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(10, 10, 15, 0.98);
+                backdrop-filter: blur(20px); flex-direction: column; padding: 24px; gap: 20px; }
             .nav-links.active { display: flex; }
             .mobile-menu-btn { display: block; }
-            .page-title { font-size: 36px; margin: 40px 0 30px; }
+            .page-title { font-size: 36px; }
         }
         @media (min-width: 769px) { .nav-links { display: flex !important; } }
     </style>
@@ -53,10 +76,10 @@
 <body>
 <div class="bg-gradient"></div>
 
-<div class="nav">
-    <div class="container">
+<div class="navbar">
+    <div class="nav-container">
         <div class="nav-content">
-            <div class="logo-area">
+            <div class="logo-section">
                 <div class="logo-box"><span>SK</span></div>
                 <div class="logo-text"><span class="first-name">Surjith</span><span class="last-name"> Kumar JK</span></div>
             </div>
@@ -68,7 +91,7 @@
                 <a href="Expertise.html">Expertise</a>
                 <a href="Contact.html">Contact</a>
             </div>
-            <div style="display: flex; align-items: center; gap: 16px;">
+            <div class="nav-right">
                 <div class="isc2-badge">ISC² Candidate</div>
                 <button class="mobile-menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
             </div>
@@ -77,7 +100,7 @@
 </div>
 
 <div class="container">
-    <h1 class="page-title">Featured <span>Projects</span></h1>
+    <h1 class="page-title">Featured <span class="gradient-text">Projects</span></h1>
     
     <div class="projects-grid">
         <div class="project-card"><div class="project-icon"><i class="fas fa-comment-dots"></i></div><h3>AI Code Reviewer</h3><p>LLM-powered code analysis tool for security vulnerability detection, bug identification, and code quality improvement using advanced language models.</p><div class="project-tech"><span>LangChain</span><span>OpenAI API</span><span>Streamlit</span></div></div>
@@ -87,10 +110,22 @@
     </div>
 </div>
 
-<div class="footer"><div class="container"><div class="footer-text">© 2026 Surjith Kumar JK — AI + Cybersecurity + GIS Infrastructure</div></div></div>
+<div class="footer">
+    <div class="container">
+        <div class="footer-text">© 2026 Surjith Kumar JK — AI + Cybersecurity + GIS Infrastructure</div>
+    </div>
+</div>
 
 <script>
-    function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
+    function toggleMenu() {
+        const navLinks = document.getElementById('navLinks');
+        navLinks.classList.toggle('active');
+    }
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            document.getElementById('navLinks').classList.remove('active');
+        });
+    });
 </script>
 </body>
 </html>
