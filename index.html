@@ -7,277 +7,207 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #0A0A0F; color: #EAEAEF; }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #0A0A0F;
-            color: #EAEAEF;
-        }
-
-        /* Background Effect */
-        .bg-gradient {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+        .bg-gradient { 
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
             background: radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.06) 0%, transparent 50%),
                         radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.04) 0%, transparent 50%);
-            z-index: 0;
-            pointer-events: none;
+            z-index: 0; pointer-events: none; 
         }
 
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 40px;
-            position: relative;
-            z-index: 2;
+        .container { 
+            max-width: 1280px; margin: 0 auto; padding: 0 40px; 
+            position: relative; z-index: 2; 
         }
 
-        /* ========== NAVIGATION BAR (Unified across all pages) ========== */
-        .navbar {
-            background: rgba(10, 10, 15, 0.85);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            width: 100%;
+        /* Unified Navbar */
+        .navbar { 
+            background: rgba(10, 10, 15, 0.85); backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+            position: sticky; top: 0; z-index: 1000; width: 100%; 
+        }
+        .nav-container { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+        .nav-content { 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 16px 0; gap: 20px; flex-wrap: wrap; 
         }
 
-        .nav-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 40px;
+        .logo-section { display: flex; align-items: center; gap: 12px; }
+        .logo-box { 
+            width: 42px; height: 42px; background: linear-gradient(135deg, #3B82F6, #10B981);
+            border-radius: 12px; display: flex; align-items: center; justify-content: center; 
+        }
+        .logo-box span { font-weight: 800; font-size: 18px; color: white; font-family: 'Syne', sans-serif; }
+        .logo-text { 
+            font-size: 20px; font-weight: 700; font-family: 'Syne', sans-serif; 
+            letter-spacing: -0.3px; 
+        }
+        .logo-text .first-name { color: #EAEAEF; }
+        .logo-text .last-name { color: #94A3B8; font-weight: 500; }
+
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a { 
+            color: #9CA3AF; text-decoration: none; font-size: 14px; font-weight: 500;
+            transition: all 0.2s ease; padding: 8px 0; position: relative; 
+        }
+        .nav-links a:hover { color: #60A5FA; }
+        .nav-links a.active { color: #60A5FA; }
+        .nav-links a.active::after { 
+            content: ''; position: absolute; bottom: -2px; left: 0;
+            width: 100%; height: 2px; background: linear-gradient(90deg, #60A5FA, #A78BFA); 
+            border-radius: 2px; 
         }
 
-        .nav-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px 0;
-            gap: 20px;
-            flex-wrap: wrap;
+        .nav-right { display: flex; align-items: center; gap: 20px; }
+        .isc2-badge { 
+            font-size: 11px; font-family: monospace; color: #34D399; 
+            background: rgba(16, 185, 129, 0.12); padding: 6px 16px; 
+            border-radius: 40px; border: 1px solid rgba(16, 185, 129, 0.25); 
+            letter-spacing: 0.5px; 
+        }
+        .mobile-menu-btn { 
+            display: none; background: none; border: none; 
+            color: #9CA3AF; font-size: 24px; cursor: pointer; 
         }
 
-        /* Logo Section */
-        .logo-section {
-            display: flex;
-            align-items: center;
-            gap: 12px;
+        /* Hero Specific Styles */
+        .hero { 
+            display: grid; grid-template-columns: 1fr 0.8fr; gap: 60px; 
+            align-items: center; padding: 80px 0; 
+        }
+        .availability { 
+            display: inline-flex; align-items: center; gap: 8px; 
+            background: rgba(59, 130, 246, 0.08); border: 1px solid rgba(59, 130, 246, 0.15); 
+            border-radius: 40px; padding: 5px 16px; margin-bottom: 28px; 
+        }
+        .live-dot { 
+            width: 8px; height: 8px; background: #10B981; 
+            border-radius: 50%; animation: pulse 1.5s infinite; 
+        }
+        @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.2); } }
+
+        h1 { 
+            font-size: 52px; font-weight: 800; font-family: 'Syne', sans-serif; 
+            line-height: 1.15; margin-bottom: 24px; 
+        }
+        .gradient-text { 
+            background: linear-gradient(135deg, #60A5FA, #A78BFA, #34D399); 
+            -webkit-background-clip: text; background-clip: text; color: transparent; 
+        }
+        .description { 
+            color: #9CA3AF; font-size: 15px; line-height: 1.6; margin-bottom: 32px; 
+        }
+        .stats { 
+            display: flex; gap: 48px; margin-bottom: 36px; 
+        }
+        .stat-value { 
+            font-size: 28px; font-weight: 800; font-family: 'Syne', sans-serif;
+            background: linear-gradient(135deg, #FFFFFF, #A78BFA); 
+            -webkit-background-clip: text; background-clip: text; color: transparent; 
+        }
+        .stat-label { 
+            font-size: 10px; font-family: monospace; color: #6B7280; 
+            letter-spacing: 0.5px; margin-top: 5px; 
+        }
+        .buttons { 
+            display: flex; gap: 16px; margin-bottom: 32px; flex-wrap: wrap; 
+        }
+        .btn-primary, .btn-outline { 
+            padding: 12px 28px; border-radius: 40px; font-size: 13px; 
+            font-weight: 600; text-decoration: none; display: inline-flex; 
+            align-items: center; gap: 8px; transition: all 0.2s; cursor: pointer; 
+        }
+        .btn-primary { 
+            background: linear-gradient(105deg, #1E293B, #0F172A); 
+            border: 1px solid rgba(59, 130, 246, 0.3); color: white; 
+        }
+        .btn-primary:hover { border-color: #3B82F6; transform: translateY(-2px); }
+        .btn-outline { 
+            background: transparent; border: 1px solid rgba(255,255,255,0.1); color: white; 
+        }
+        .btn-outline:hover { 
+            border-color: rgba(59, 130, 246, 0.5); background: rgba(59, 130, 246, 0.05); 
+            transform: translateY(-2px); 
         }
 
-        .logo-box {
-            width: 42px;
-            height: 42px;
-            background: linear-gradient(135deg, #3B82F6, #10B981);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+        .trust { display: flex; gap: 28px; flex-wrap: wrap; }
+        .trust-item { display: flex; align-items: center; gap: 8px; font-size: 11px; color: #6B7280; }
 
-        .logo-box span {
-            font-weight: 800;
-            font-size: 18px;
-            color: white;
-            font-family: 'Syne', sans-serif;
+        /* Profile Card */
+        .profile-card { 
+            background: rgba(20, 24, 35, 0.5); backdrop-filter: blur(12px); 
+            border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 28px; 
+            padding: 32px; position: relative; 
         }
-
-        .logo-text {
-            font-size: 20px;
-            font-weight: 700;
-            font-family: 'Syne', sans-serif;
-            letter-spacing: -0.3px;
+        .profile-img { 
+            width: 180px; height: 180px; border-radius: 20px; 
+            overflow: hidden; margin: 0 auto 20px; 
         }
-
-        .logo-text .first-name {
-            color: #EAEAEF;
+        .profile-img img { width: 100%; height: 100%; object-fit: cover; }
+        .profile-name { text-align: center; font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+        .profile-title { text-align: center; font-size: 13px; color: #60A5FA; margin-bottom: 18px; }
+        .tech-stack { 
+            display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; 
         }
-
-        .logo-text .last-name {
-            color: #94A3B8;
-            font-weight: 500;
+        .tech-item { 
+            font-size: 10px; font-family: monospace; padding: 5px 12px; 
+            background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(255,255,255,0.05); 
+            border-radius: 8px; color: #94A3B8; 
         }
-
-        /* Navigation Links */
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            align-items: center;
+        .floating-icon { 
+            position: absolute; width: 38px; height: 38px; 
+            background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3); 
+            border-radius: 12px; display: flex; align-items: center; justify-content: center; 
+            backdrop-filter: blur(8px); 
         }
+        .floating-1 { top: -12px; right: -12px; }
+        .floating-2 { bottom: -12px; left: -12px; background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.3); }
 
-        .nav-links a {
-            color: #9CA3AF;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            padding: 8px 0;
-            position: relative;
+        .footer { 
+            border-top: 1px solid rgba(255, 255, 255, 0.04); padding: 24px 0; 
+            text-align: center; margin-top: 60px; 
         }
+        .footer-text { font-size: 10px; color: #4B5563; font-family: monospace; }
 
-        .nav-links a:hover {
-            color: #60A5FA;
-        }
-
-        .nav-links a.active {
-            color: #60A5FA;
-        }
-
-        .nav-links a.active::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, #60A5FA, #A78BFA);
-            border-radius: 2px;
-        }
-
-        /* Right Section */
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .isc2-badge {
-            font-size: 11px;
-            font-family: monospace;
-            color: #34D399;
-            background: rgba(16, 185, 129, 0.12);
-            padding: 6px 16px;
-            border-radius: 40px;
-            border: 1px solid rgba(16, 185, 129, 0.25);
-            letter-spacing: 0.5px;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: #9CA3AF;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        /* Common Styles for All Pages */
-        .gradient-text {
-            background: linear-gradient(135deg, #60A5FA, #A78BFA, #34D399);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .page-title {
-            font-size: 48px;
-            font-weight: 800;
-            font-family: 'Syne', sans-serif;
-            text-align: center;
-            margin: 60px 0 40px;
-        }
-
-        .page-title span {
-            background: linear-gradient(135deg, #60A5FA, #A78BFA, #34D399);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .footer {
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
-            padding: 24px 0;
-            text-align: center;
-            margin-top: 60px;
-        }
-
-        .footer-text {
-            font-size: 10px;
-            color: #4B5563;
-            font-family: monospace;
-        }
-
-        /* Responsive */
         @media (max-width: 1024px) {
-            .hero {
-                grid-template-columns: 1fr;
-                gap: 50px;
-            }
-            h1 {
-                font-size: 44px;
-            }
+            .hero { grid-template-columns: 1fr; gap: 50px; }
+            h1 { font-size: 44px; }
         }
-
         @media (max-width: 768px) {
-            .container, .nav-container {
-                padding: 0 20px;
+            .container, .nav-container { padding: 0 20px; }
+            .nav-links { 
+                display: none; position: absolute; top: 100%; left: 0; right: 0; 
+                background: rgba(10, 10, 15, 0.98); backdrop-filter: blur(20px); 
+                flex-direction: column; padding: 24px; gap: 20px; 
             }
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: rgba(10, 10, 15, 0.98);
-                backdrop-filter: blur(20px);
-                flex-direction: column;
-                padding: 24px;
-                gap: 20px;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            }
-            .nav-links.active {
-                display: flex;
-            }
-            .mobile-menu-btn {
-                display: block;
-            }
-            h1, .page-title {
-                font-size: 36px;
-            }
-            .stats {
-                gap: 30px;
-            }
-            .profile-img {
-                width: 150px;
-                height: 150px;
-            }
+            .nav-links.active { display: flex; }
+            .mobile-menu-btn { display: block; }
+            h1, .page-title { font-size: 36px; }
+            .stats { gap: 30px; }
+            .profile-img { width: 150px; height: 150px; }
         }
-
-        @media (min-width: 769px) {
-            .nav-links {
-                display: flex !important;
-            }
+        @media (min-width: 769px) { 
+            .nav-links { display: flex !important; } 
         }
     </style>
 </head>
 <body>
-
 <div class="bg-gradient"></div>
 
-<!-- Navigation Bar - Consistent Across All Pages -->
+<!-- Navbar -->
 <div class="navbar">
     <div class="nav-container">
         <div class="nav-content">
-            <!-- Logo -->
             <div class="logo-section">
-                <div class="logo-box">
-                    <span>SK</span>
-                </div>
+                <div class="logo-box"><span>SK</span></div>
                 <div class="logo-text">
                     <span class="first-name">Surjith</span>
                     <span class="last-name"> Kumar JK</span>
                 </div>
             </div>
-
-            <!-- Navigation Links -->
+            
             <div class="nav-links" id="navLinks">
                 <a href="index.html" class="active">Home</a>
                 <a href="Profile.html">Profile</a>
@@ -287,7 +217,6 @@
                 <a href="Contact.html">Contact</a>
             </div>
 
-            <!-- Right Section -->
             <div class="nav-right">
                 <div class="isc2-badge">ISC² Candidate</div>
                 <button class="mobile-menu-btn" onclick="toggleMenu()">
@@ -301,7 +230,6 @@
 <!-- Hero Section -->
 <div class="container">
     <div class="hero">
-        <!-- Left Column -->
         <div>
             <div class="availability">
                 <div class="live-dot"></div>
@@ -317,18 +245,9 @@
                 <strong>8 production projects delivered.</strong>
             </p>
             <div class="stats">
-                <div>
-                    <div class="stat-value">8+</div>
-                    <div class="stat-label">PRODUCTION PROJECTS</div>
-                </div>
-                <div>
-                    <div class="stat-value">3+</div>
-                    <div class="stat-label">YEARS INDUSTRY</div>
-                </div>
-                <div>
-                    <div class="stat-value">4</div>
-                    <div class="stat-label">TECH DOMAINS</div>
-                </div>
+                <div><div class="stat-value">8+</div><div class="stat-label">PRODUCTION PROJECTS</div></div>
+                <div><div class="stat-value">3+</div><div class="stat-label">YEARS INDUSTRY</div></div>
+                <div><div class="stat-value">4</div><div class="stat-label">TECH DOMAINS</div></div>
             </div>
             <div class="buttons">
                 <a href="Projects.html" class="btn-primary">
@@ -339,30 +258,16 @@
                 </a>
             </div>
             <div class="trust">
-                <div class="trust-item">
-                    <i class="fas fa-check-circle" style="color: #10B981;"></i>
-                    <span>NDA-Compliant</span>
-                </div>
-                <div class="trust-item">
-                    <i class="fas fa-shield-alt" style="color: #60A5FA;"></i>
-                    <span>ISC² Candidate</span>
-                </div>
-                <div class="trust-item">
-                    <i class="fas fa-globe" style="color: #34D399;"></i>
-                    <span>Global Remote</span>
-                </div>
+                <div class="trust-item"><i class="fas fa-check-circle" style="color: #10B981;"></i><span>NDA-Compliant</span></div>
+                <div class="trust-item"><i class="fas fa-shield-alt" style="color: #60A5FA;"></i><span>ISC² Candidate</span></div>
+                <div class="trust-item"><i class="fas fa-globe" style="color: #34D399;"></i><span>Global Remote</span></div>
             </div>
         </div>
 
-        <!-- Right Column - Profile Card -->
         <div>
             <div class="profile-card">
-                <div class="floating-icon floating-1">
-                    <i class="fas fa-brain" style="color: #60A5FA; font-size: 16px;"></i>
-                </div>
-                <div class="floating-icon floating-2">
-                    <i class="fas fa-shield-haltered" style="color: #34D399; font-size: 16px;"></i>
-                </div>
+                <div class="floating-icon floating-1"><i class="fas fa-brain" style="color: #60A5FA; font-size: 16px;"></i></div>
+                <div class="floating-icon floating-2"><i class="fas fa-shield-haltered" style="color: #34D399; font-size: 16px;"></i></div>
                 <div class="profile-img">
                     <img src="SurjithKumar-JK.jpg" alt="Surjith Kumar JK">
                 </div>
@@ -381,12 +286,9 @@
     </div>
 </div>
 
-<!-- Footer -->
 <div class="footer">
     <div class="container">
-        <div class="footer-text">
-            © 2026 Surjith Kumar JK — AI + Cybersecurity + GIS Infrastructure
-        </div>
+        <div class="footer-text">© 2026 Surjith Kumar JK — AI + Cybersecurity + GIS Infrastructure</div>
     </div>
 </div>
 
@@ -395,14 +297,11 @@
         const navLinks = document.getElementById('navLinks');
         navLinks.classList.toggle('active');
     }
-
-    // Close menu when clicking a link
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
             document.getElementById('navLinks').classList.remove('active');
         });
     });
 </script>
-
 </body>
 </html>
